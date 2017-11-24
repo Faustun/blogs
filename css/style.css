@@ -938,7 +938,8 @@ h6 {
         .post .post-footer .post-tags a::before {
           content: '#'; }
     .post .post-footer .post-nav {
-      margin: 1em 0; }
+      margin: 2em 0;
+      text-align: center; }
       .post .post-footer .post-nav:before, .post .post-footer .post-nav:after {
         content: " ";
         display: table; }
