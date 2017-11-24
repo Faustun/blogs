@@ -510,8 +510,7 @@ h6 {
     text-align: center; } }
 
 .posts {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #e6e6e6; }
+  margin-bottom: 20px; }
 
 .post {
   padding: 1.5em 0; }
@@ -929,7 +928,6 @@ h6 {
         height: 200px; }
   .post .post-footer {
     margin-top: 20px;
-    border-top: 1px solid #e6e6e6;
     font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
     .post .post-footer .post-tags {
       padding: 15px 0; }
@@ -986,16 +984,17 @@ h6 {
     margin: 0 4px;
     padding: 4px 12px;
     border-radius: 4px;
-    border-bottom: 4px solid #3aa373;
+    border-bottom: 4px solid #04316f;
     font-size: 14px;
     color: #fff;
     background-color: #0047AB; }
   .pagination .prev:hover,
   .pagination .next:hover {
-    background-color: #22bd77; }
+    background-color: #054196; }
 
 .footer {
-  margin-top: 2em; }
+  margin-top: 2em;
+  border-top: 1px solid #e6e6e6; }
   .footer .social-links {
     text-align: center; }
     .footer .social-links .iconfont {
