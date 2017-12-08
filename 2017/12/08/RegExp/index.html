@@ -17,6 +17,8 @@
 
 
 
+  <meta name="description" content="正则知识点"/>
+
 
 
 
@@ -38,7 +40,7 @@
 
 
 
-<link rel="canonical" href="https://songzhiguo.github.io/blogs/"/>
+<link rel="canonical" href="https://songzhiguo.github.io/blogs/2017/12/08/RegExp/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/blogs/css/style.css?v=2.6.0" />
@@ -77,7 +79,7 @@
 
 
 
-    <title> Song </title>
+    <title> 正则知识点 - Song </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -152,14 +154,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/blogs/2017/12/08/RegExp/">正则知识点</a>
+          正则知识点
         
       </h1>
 
@@ -174,14 +174,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#正则的方法-text"><span class="toc-text">正则的方法-text</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串方法-match"><span class="toc-text">字符串方法-match</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串的方法-search"><span class="toc-text">字符串的方法-search</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串方法-replace"><span class="toc-text">字符串方法-replace</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子项"><span class="toc-text">子项 - ()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子项重定向"><span class="toc-text">子项重定向</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-
-        
-          <p>正则的两种写法：</p>
+        <p>正则的两种写法：</p>
 <p>第一种（标准写法）：<br>new RegExp(规则，修饰符)；</p>
 <p>第二种（简写）：<br>/规则/</p>
 <blockquote>
@@ -263,383 +266,46 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'2017/2/17'</span>;</div><div class="line"><span class="keyword">var</span> str = str.replace(<span class="regexp">/(\d+)\D+(\d+)\D+(\d+)/</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span>,$<span class="number">1</span>,$<span class="number">2</span>,$<span class="number">3</span></span>)</span>&#123;</div><div class="line">    <span class="comment">//console.log($1,$2,$3);</span></div><div class="line">    <span class="keyword">return</span> $<span class="number">1</span> + <span class="string">'年'</span> + $<span class="number">2</span> + <span class="string">'月'</span> + $<span class="number">3</span> + <span class="string">'日'</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
 <h4 id="子项重定向"><a href="#子项重定向" class="headerlink" title="子项重定向"></a>子项重定向</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'ssssssssaaaaaabbbbbb'</span>;</div><div class="line">str.replace(<span class="regexp">/(\w)\1+/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span>,$<span class="number">1</span></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log($<span class="number">1</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/12/07/library/">javascript武器库</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-07
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
-          
-        
 
-        
-          <blockquote>
-<ul>
-<li>自己打造一把趁手的武器，高效率完成前端业务代码。</li>
-</ul>
-</blockquote>
-          <div class="read-more">
-            <a href="/blogs/2017/12/07/library/" class="read-more-link">阅读更多</a>
-          </div>
-        
+
+
       
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/12/01/loadding/">页面加载loading</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-01
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>总结几种常见的Loading效果</p>
-<h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><p><img src="https://songzhiguo.github.io/lib/images/1461983-be7394f8fda15c9b.gif" alt=""><br>
-          <div class="read-more">
-            <a href="/blogs/2017/12/01/loadding/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
     
 
     
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/23/autoplay/">移动端背景音乐自动播放问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-23
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/踩坑记录/">踩坑记录</a>
-            
-          </div>
+      <footer class="post-footer">
         
         
-      </div>
-    </header>
-
+        
+  <nav class="post-nav">
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h4 id="大部分IOS系统和少部分Android微信不支持自动播放"><a href="#大部分IOS系统和少部分Android微信不支持自动播放" class="headerlink" title="大部分IOS系统和少部分Android微信不支持自动播放"></a>大部分IOS系统和少部分Android微信不支持自动播放</h4><p>解决方案：监听WeixinJSBridgeReady事件、DOMContentLoaded事件<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/23/autoplay/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/11/oriented/">面向对象编程构造函数的继承</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-11
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>今天要介绍的是，对象之间的”继承”的五种方法。<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/11/oriented/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/09/pit/">IOS中position:fixed弹出框中的input出现光标错位的问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-09
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/踩坑记录/">踩坑记录</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>解决方案是 在弹框出现的时候给body添加fixed<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/09/pit/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/08/this/">Javascript的this用法</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-08
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>this是Javascript语言的一个关键字。<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/08/this/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/08/collect/">前端收集</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-08
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/折腾工具/">折腾工具</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>在前端路上摸索前行，在这里分享自己长期关注的前端开发相关的优秀网站、博客、以及活跃开发者。<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/08/collect/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/blogs/2017/12/07/library/">
+        <span class="next-text nav-default">NEXT</span>
+        <span class="prev-text nav-mobile">NEXT</span>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -704,6 +370,8 @@
     </div>
 
     
+  
+
 
 
     
