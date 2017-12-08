@@ -635,6 +635,10 @@ h6 {
     color: rgba(52, 73, 94, 0.8);
     background-color: rgba(0, 71, 171, 0.05);
     border-left: 3px solid rgba(0, 71, 171, 0.3); }
+    .post .post-content blockquote ul {
+      padding-left: 0; }
+      .post .post-content blockquote ul li {
+        list-style: none; }
     .post .post-content blockquote p {
       margin: 0; }
   .post .post-content img {
@@ -675,7 +679,6 @@ h6 {
         font-size: 13px;
         font-weight: bold;
         color: #b1b1b1;
-        background: #e7eaef;
         content: 'Code'; }
     .post .post-content .highlight.html > table::after {
       content: "HTML"; }
