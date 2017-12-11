@@ -17,6 +17,8 @@
 
 
 
+  <meta name="description" content="字符串常用方法"/>
+
 
 
 
@@ -38,7 +40,7 @@
 
 
 
-<link rel="canonical" href="https://songzhiguo.github.io/blogs/"/>
+<link rel="canonical" href="https://songzhiguo.github.io/blogs/2017/12/11/string/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/blogs/css/style.css?v=2.6.0" />
@@ -77,7 +79,7 @@
 
 
 
-    <title> Song </title>
+    <title> 字符串常用方法 - Song </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -152,14 +154,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/blogs/2017/12/11/string/">字符串常用方法</a>
+          字符串常用方法
         
       </h1>
 
@@ -174,14 +174,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#charAt"><span class="toc-text">charAt()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#charCodeAt"><span class="toc-text">charCodeAt()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#indexOf"><span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lastIndexOf"><span class="toc-text">lastIndexOf()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#split"><span class="toc-text">split ()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-text">join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toLowerCase"><span class="toc-text">toLowerCase()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toUpperCase"><span class="toc-text">toUpperCase()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找替换"><span class="toc-text">查找替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice"><span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#substring"><span class="toc-text">substring()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#substr"><span class="toc-text">substr()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trim"><span class="toc-text">trim()</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-
-        
-          <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。</p>
+        <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。</p>
 <blockquote>
 <ul>
 <li>string.方法名(参数1,[参数2])，返回值类型</li>
@@ -203,429 +206,46 @@
 <h3 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> *  <span class="built_in">string</span>.substr(begin,[<span class="built_in">length</span>]),<span class="built_in">string</span></div><div class="line"> *  作用：</div><div class="line"> *      截取字符串中某一段字符片段</div><div class="line"> *  参数：</div><div class="line"> *      begin:开始位置</div><div class="line"> *      [<span class="built_in">length</span>]：截取长度</div><div class="line"> *  注意：</div><div class="line"> *      <span class="number">1.</span>不传参数，返回整个字符串</div><div class="line"> *      <span class="number">2.</span>从开始位置截取到结束位置，不包括结束位置的字符</div><div class="line"> *      <span class="number">3.</span>结束位置-开始位置 = 截取的字符个数，从开始位置截取几个字符</div><div class="line"> *      <span class="number">4.</span>截取不到，返回空字符串</div><div class="line"> *      <span class="number">5.</span><span class="number">-1</span>是最后一位   </div><div class="line"> * */</div></pre></td></tr></table></figure>
 <h3 id="trim"><a href="#trim" class="headerlink" title="trim()"></a>trim()</h3><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> *  <span class="built_in">string</span>.<span class="built_in">trim</span>(),<span class="built_in">string</span></div><div class="line"> *  作用: 去除字符串前后空格</div><div class="line"> * */</div></pre></td></tr></table></figure>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/12/08/RegExp/">正则知识点</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-08
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
-          
-        
 
-        
-          <p>正则的两种写法：</p>
-<p>第一种（标准写法）：<br>new RegExp(规则，修饰符)；</p>
-<p>第二种（简写）：<br>/规则/<br>
-          <div class="read-more">
-            <a href="/blogs/2017/12/08/RegExp/" class="read-more-link">阅读更多</a>
-          </div>
-        
+
+
       
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/12/07/library/">javascript武器库</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-07
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
-<ul>
-<li>自己打造一把趁手的武器，高效率完成前端业务代码。</li>
-</ul>
-</blockquote>
-          <div class="read-more">
-            <a href="/blogs/2017/12/07/library/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
     
 
     
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/12/01/loadding/">页面加载loading</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-01
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
+      <footer class="post-footer">
         
         
-      </div>
-    </header>
-
+        
+  <nav class="post-nav">
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>总结几种常见的Loading效果</p>
-<h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><p><img src="https://songzhiguo.github.io/lib/images/1461983-be7394f8fda15c9b.gif" alt=""><br>
-          <div class="read-more">
-            <a href="/blogs/2017/12/01/loadding/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/23/autoplay/">移动端背景音乐自动播放问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-23
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/踩坑记录/">踩坑记录</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h4 id="大部分IOS系统和少部分Android微信不支持自动播放"><a href="#大部分IOS系统和少部分Android微信不支持自动播放" class="headerlink" title="大部分IOS系统和少部分Android微信不支持自动播放"></a>大部分IOS系统和少部分Android微信不支持自动播放</h4><p>解决方案：监听WeixinJSBridgeReady事件、DOMContentLoaded事件<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/23/autoplay/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/11/oriented/">面向对象编程构造函数的继承</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-11
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>今天要介绍的是，对象之间的”继承”的五种方法。<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/11/oriented/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/09/pit/">IOS中position:fixed弹出框中的input出现光标错位的问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-09
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/踩坑记录/">踩坑记录</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>解决方案是 在弹框出现的时候给body添加fixed<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/09/pit/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/08/this/">Javascript的this用法</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-08
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/转载收藏/">转载收藏</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>this是Javascript语言的一个关键字。<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/08/this/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/08/collect/">前端收集</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-08
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/折腾工具/">折腾工具</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>在前端路上摸索前行，在这里分享自己长期关注的前端开发相关的优秀网站、博客、以及活跃开发者。<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/08/collect/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/blogs/2017/12/08/RegExp/">
+        <span class="next-text nav-default">NEXT</span>
+        <span class="prev-text nav-mobile">NEXT</span>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -690,6 +310,8 @@
     </div>
 
     
+  
+
 
 
     
