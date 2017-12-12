@@ -146,6 +146,7 @@
           </a>
         </li>
       
+      <li class="menu-item"><a class="menu-item-link" href="javascript:;">搜索</a></li>
     </ul>
   
 </nav>
@@ -271,10 +272,16 @@
         <i class="iconfont icon-up"></i>
       </div>
     </div>
-
+    <div class="modal"></div>
+    <section class="popup">
+        <div id="site_search">
+            <input type="text" id="local-search-input" results="0"/>
+            <div id="local-search-result"></div>
+        </div>
+        <span class="popup-btn-close" id="popupClose">close</span>
+    </section>
     
   
-
 
 
     
@@ -299,6 +306,7 @@
 
     <script type="text/javascript" src="/blogs/js/src/even.js?v=2.6.0"></script>
 <script type="text/javascript" src="/blogs/js/src/bootstrap.js?v=2.6.0"></script>
+<script type="text/javascript" src="/blogs/js/src/search.js?v=2.6.0"></script>
 
   </body>
 </html>
