@@ -474,6 +474,27 @@
 </tr>
 </tbody>
 </table>
+<h4 id="javascript工具"><a href="#javascript工具" class="headerlink" title="javascript工具"></a>javascript工具</h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>地址</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>babeljs</td>
+<td><a href="https://babeljs.io/" target="_blank" rel="external">https://babeljs.io/</a></td>
+<td>The compiler for writing next generation JavaScript</td>
+</tr>
+<tr>
+<td>BootCDN</td>
+<td><a href="http://www.bootcdn.cn/" target="_blank" rel="external">http://www.bootcdn.cn/</a></td>
+<td>前端开源项目 CDN 加速服务</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       
         <categories>
