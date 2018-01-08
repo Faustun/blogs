@@ -192,7 +192,7 @@
         
 
         
-          <h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><p>从数组中提取值，按照对应位置，对变量赋值。</p>
+          <h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><p>从数组中提取值，按照对应位置，对变量赋值。</p>
 <p>如果解构不成功，变量的值就等于undefined。</p>
 <p>不完全解构： 即等号左边的模式，只匹配一部分的等号右边的数组。(这种情况下，解构依然可以成功)</p>
 <p>如果等号的右边不是数组(或者严格地说，不是可遍历的结构，那么将会报错)</p>
@@ -472,8 +472,7 @@
 <li>自己打造一把趁手的武器，高效率完成前端业务代码。</li>
 </ul>
 </blockquote>
-<p><img src="https://songzhiguo.github.io/lib/images/2964183279-5a06f5964878b_articlex.jpg" alt=""></p>
-<h2 id="常用函数总汇"><a href="#常用函数总汇" class="headerlink" title="常用函数总汇"></a>常用函数总汇</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="1-1arrayEqual"><a href="#1-1arrayEqual" class="headerlink" title="1.1arrayEqual"></a>1.1arrayEqual</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * </span></div><div class="line"><span class="comment"> * @desc 判断两个数组是否相等</span></div><div class="line"><span class="comment"> * @param &#123;Array&#125; arr1 </span></div><div class="line"><span class="comment"> * @param &#123;Array&#125; arr2 </span></div><div class="line"><span class="comment"> * @return &#123;Boolean&#125;</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayEqual</span>(<span class="params">arr1, arr2</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr1 === arr2) <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">if</span> (arr1.length != arr2.length) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.length; ++i) &#123;</div><div class="line">        <span class="keyword">if</span> (arr1[i] !== arr2[i]) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://songzhiguo.github.io/lib/images/2964183279-5a06f5964878b_articlex.jpg" alt=""><br>
           <div class="read-more">
             <a href="/blogs/2017/12/07/library/" class="read-more-link">阅读更多</a>
           </div>

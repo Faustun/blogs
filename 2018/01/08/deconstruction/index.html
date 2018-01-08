@@ -186,14 +186,14 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的解构赋值"><span class="toc-text">数组的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的解构赋值"><span class="toc-text">对象的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串的解构赋值"><span class="toc-text">字符串的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数值和布尔值的解构赋值"><span class="toc-text">数值和布尔值的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数参数的解构赋值"><span class="toc-text">函数参数的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#圆括号问题"><span class="toc-text">圆括号问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用途"><span class="toc-text">用途</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的解构赋值"><span class="toc-text">数组的解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的解构赋值"><span class="toc-text">对象的解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的解构赋值"><span class="toc-text">字符串的解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数值和布尔值的解构赋值"><span class="toc-text">数值和布尔值的解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数的解构赋值"><span class="toc-text">函数参数的解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#圆括号问题"><span class="toc-text">圆括号问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用途"><span class="toc-text">用途</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><p>从数组中提取值，按照对应位置，对变量赋值。</p>
+        <h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><p>从数组中提取值，按照对应位置，对变量赋值。</p>
 <p>如果解构不成功，变量的值就等于undefined。</p>
 <p>不完全解构： 即等号左边的模式，只匹配一部分的等号右边的数组。(这种情况下，解构依然可以成功)</p>
 <p>如果等号的右边不是数组(或者严格地说，不是可遍历的结构，那么将会报错)</p>
@@ -204,7 +204,7 @@
 <a id="more"></a>
 <p>如果一个数组成员是null，默认值就不会生效，因为null不严格等于undefined。</p>
 <p>如果默认值是一个表达式，那么这个表达式是惰性求值的，即只有在用到的时候，才会求值。</p>
-<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
+<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
 <p>对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
 <p>与数组一样，解构也可以用于嵌套结构的对象。</p>
 <p>对象的解构也可以指定默认值。默认值生效的条件是，对象的属性值严格等于undefined。</p>
@@ -213,21 +213,21 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; log, sin, cos &#125; = <span class="built_in">Math</span>;</div></pre></td></tr></table></figure>
 <p>由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">let</span> &#123;<span class="number">0</span> : first, [arr.length - <span class="number">1</span>] : last&#125; = arr;</div><div class="line">first <span class="comment">// 1</span></div><div class="line">last <span class="comment">// 3</span></div></pre></td></tr></table></figure>
-<h4 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h4><p>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</p>
+<h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><p>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</p>
 <p>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</p>
-<h4 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h4><p>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。</p>
+<h3 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h3><p>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。</p>
 <p>解构赋值的规则是，只要等号右边的值不是对象或数组，就先将其转为对象。由于undefined和null无法转为对象，所以对它们进行解构赋值，都会报错。</p>
-<h4 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h4><p>函数的参数也可以使用解构赋值。</p>
+<h3 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h3><p>函数的参数也可以使用解构赋值。</p>
 <p>函数参数的解构也可以使用默认值。</p>
 <p>undefined就会触发函数参数的默认值。</p>
-<h4 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h4><p>解构赋值虽然很方便，但是解析起来并不容易。对于编译器来说，一个式子到底是模式，还是表达式，没有办法从一开始就知道，必须解析到（或解析不到）等号才能知道。</p>
+<h3 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h3><p>解构赋值虽然很方便，但是解析起来并不容易。对于编译器来说，一个式子到底是模式，还是表达式，没有办法从一开始就知道，必须解析到（或解析不到）等号才能知道。</p>
 <p>由此带来的问题是，如果模式中出现圆括号怎么处理。ES6 的规则是，只要有可能导致解构的歧义，就不得使用圆括号。</p>
 <p>但是，这条规则实际上不那么容易辨别，处理起来相当麻烦。因此，建议只要有可能，就不要在模式中放置圆括号。</p>
 <p>以下三种解构赋值不得使用圆括号。</p>
 <p>（1）变量声明语句</p>
 <p>（2）函数参数</p>
 <p>（3）赋值语句的模式（可以使用圆括号的情况只有一种：赋值语句的非模式部分，可以使用圆括号。）</p>
-<h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><p>（1）交换变量的值</p>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><p>（1）交换变量的值</p>
 <p>（2）从函数返回多个值</p>
 <p>（3）函数参数的定义</p>
 <p>（4）提取 JSON 数据</p>
