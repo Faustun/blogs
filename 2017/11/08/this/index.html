@@ -193,10 +193,11 @@
 
     <div class="post-content">
       
-        <p>this是Javascript语言的一个关键字。<br><a id="more"></a></p>
+        <p>this是Javascript语言的一个关键字。</p>
 <p>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123; </div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>; </div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
 <p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象。<br>下面分四种情况，详细讨论this的用法。</p>
+<a id="more"></a>
 <h4 id="情况一：纯粹的函数调用"><a href="#情况一：纯粹的函数调用" class="headerlink" title="情况一：纯粹的函数调用"></a>情况一：纯粹的函数调用</h4><p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。<br>请看下面这段代码，它的运行结果是1。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">　　　　alert(<span class="keyword">this</span>.x);</div><div class="line">　　&#125;</div><div class="line">　　test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
 <p>为了证明this就是全局对象，我对代码做一些改变：</p>

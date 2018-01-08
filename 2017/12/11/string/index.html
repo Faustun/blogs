@@ -187,7 +187,7 @@
 
     <div class="post-content">
       
-        <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。<br><a id="more"></a></p>
+        <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。</p>
 <blockquote>
 <ul>
 <li>string.方法名(参数1,[参数2])，返回值类型</li>
@@ -195,6 +195,7 @@
 <li>[]:可选参数</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> *  <span class="built_in">string</span>.charAt(<span class="built_in">index</span>)，String</div><div class="line"> * 作用：查找字符串某一位置是什么字符</div><div class="line"> * 参数：</div><div class="line"> *  <span class="built_in">index</span>:查找第几位是什么字符串，第一位是<span class="number">0</span></div><div class="line"> * 注意：</div><div class="line"> *  <span class="number">1</span>.只能获取，不能设置</div><div class="line"> *  <span class="number">2</span>.没有这一位，返回空字符串</div><div class="line"> * */</div></pre></td></tr></table></figure>
 <h3 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt()"></a>charCodeAt()</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> *  string.charCodeAt(index),Number</div><div class="line"> * 作用：返回字符串某一位字符串的unicode码</div><div class="line"> * 参数：</div><div class="line"> *  index：第几位，从0开始</div><div class="line"> *  [a-z]:97<span class="string">-122</span></div><div class="line"> *  [A-Z]:65<span class="string">-90</span></div><div class="line"> *  [0<span class="string">-9</span>]:48<span class="string">-57</span></div><div class="line"> * */</div></pre></td></tr></table></figure>
 <h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  *  <span class="built_in">string</span>.indexOf(searchValue,[<span class="built_in">index</span>]),Number</div><div class="line">  * 作用：从字符串第一位开始查找指定的字符第一次出现的位置(从左往右)</div><div class="line">  * 参数：</div><div class="line">  *  searchValue：要查找的字符，<span class="built_in">string</span></div><div class="line">  *  [<span class="built_in">index</span>]:从第几位开始找，默认值为<span class="number">0</span></div><div class="line">  * 注意：</div><div class="line">  *  <span class="number">1</span>.没找到指定字符，返回-<span class="number">1</span></div><div class="line">  *  <span class="number">2</span>.不传参数，返回-<span class="number">1</span></div><div class="line">  * */</div></pre></td></tr></table></figure>

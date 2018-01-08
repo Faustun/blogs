@@ -188,6 +188,8 @@
       
         
         
+          
+        
 
         
           <h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><p>从数组中提取值，按照对应位置，对变量赋值。</p>
@@ -198,39 +200,9 @@
 <p>事实上，只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值。</p>
 <p>解构赋值允许指定默认值。</p>
 <p>注意，ES6 内部使用严格相等运算符（===），判断一个位置是否有值。所以，只有当一个数组成员严格等于undefined，默认值才会生效。</p>
-<p>如果一个数组成员是null，默认值就不会生效，因为null不严格等于undefined。</p>
-<p>如果默认值是一个表达式，那么这个表达式是惰性求值的，即只有在用到的时候，才会求值。</p>
-<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
-<p>对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
-<p>与数组一样，解构也可以用于嵌套结构的对象。</p>
-<p>对象的解构也可以指定默认值。默认值生效的条件是，对象的属性值严格等于undefined。</p>
-<p>如果解构失败，变量的值等于undefined。</p>
-<p>对象的解构赋值，可以很方便地将现有对象的方法，赋值到某个变量。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; log, sin, cos &#125; = <span class="built_in">Math</span>;</div></pre></td></tr></table></figure>
-<p>由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">let</span> &#123;<span class="number">0</span> : first, [arr.length - <span class="number">1</span>] : last&#125; = arr;</div><div class="line">first <span class="comment">// 1</span></div><div class="line">last <span class="comment">// 3</span></div></pre></td></tr></table></figure>
-<h4 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h4><p>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</p>
-<p>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</p>
-<h4 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h4><p>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。</p>
-<p>解构赋值的规则是，只要等号右边的值不是对象或数组，就先将其转为对象。由于undefined和null无法转为对象，所以对它们进行解构赋值，都会报错。</p>
-<h4 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h4><p>函数的参数也可以使用解构赋值。</p>
-<p>函数参数的解构也可以使用默认值。</p>
-<p>undefined就会触发函数参数的默认值。</p>
-<h4 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h4><p>解构赋值虽然很方便，但是解析起来并不容易。对于编译器来说，一个式子到底是模式，还是表达式，没有办法从一开始就知道，必须解析到（或解析不到）等号才能知道。</p>
-<p>由此带来的问题是，如果模式中出现圆括号怎么处理。ES6 的规则是，只要有可能导致解构的歧义，就不得使用圆括号。</p>
-<p>但是，这条规则实际上不那么容易辨别，处理起来相当麻烦。因此，建议只要有可能，就不要在模式中放置圆括号。</p>
-<p>以下三种解构赋值不得使用圆括号。</p>
-<p>（1）变量声明语句</p>
-<p>（2）函数参数</p>
-<p>（3）赋值语句的模式（可以使用圆括号的情况只有一种：赋值语句的非模式部分，可以使用圆括号。）</p>
-<h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><p>（1）交换变量的值</p>
-<p>（2）从函数返回多个值</p>
-<p>（3）函数参数的定义</p>
-<p>（4）提取 JSON 数据</p>
-<p>（5）函数参数的默认值</p>
-<p>（6）遍历 Map 结构</p>
-<p>（7）输入模块的指定方法</p>
-
+          <div class="read-more">
+            <a href="/blogs/2018/01/08/deconstruction/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -315,7 +287,18 @@
         
 
         
-          <p>时间对象，时间戳， new Date()<br>
+          <p>时间对象，时间戳， new Date()</p>
+<p>获取到的是本地时间，时间对象下有一些方法，可以让我们获取或者设置时间</p>
+<p>1970年1月1日00:00:00格林尼治时间</p>
+<p>注意：月从0开始，0是一月，11是十二月</p>
+<blockquote>
+<ul>
+<li>设置时间对象3种格式</li>
+<li>1.数字，用逗号分隔（年,月,日,时,分,秒）</li>
+<li>2.字符串,月份英文或缩写,首字母大小写都行，用逗号或者空格分隔(月 日 年 时:分:秒)</li>
+<li>3.对象,时间对象</li>
+</ul>
+</blockquote>
           <div class="read-more">
             <a href="/blogs/2017/12/13/date/" class="read-more-link">阅读更多</a>
           </div>
@@ -359,7 +342,14 @@
         
 
         
-          <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。<br>
+          <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。</p>
+<blockquote>
+<ul>
+<li>string.方法名(参数1,[参数2])，返回值类型</li>
+<li>参数列表</li>
+<li>[]:可选参数</li>
+</ul>
+</blockquote>
           <div class="read-more">
             <a href="/blogs/2017/12/11/string/" class="read-more-link">阅读更多</a>
           </div>
@@ -405,7 +395,29 @@
         
           <p>正则的两种写法：</p>
 <p>第一种（标准写法）：<br>new RegExp(规则，修饰符)；</p>
-<p>第二种（简写）：<br>/规则/<br>
+<p>第二种（简写）：<br>/规则/</p>
+<blockquote>
+<ul>
+<li>\d：一个数字</li>
+<li>\D：一个非数字</li>
+<li>\w：一个数字、字母、下划线</li>
+<li>\W：一个非数字、字母、下划线</li>
+<li>\n：换行</li>
+<li>\s：空格</li>
+<li>\S：非空格</li>
+<li>\b：边界符</li>
+<li>.：任意字符除了\n</li>
+<li>[]：在中括号里任意选择一个字符。</li>
+<li>[^]：排除</li>
+<li>{}：量词范围</li>
+<li>{0,1}/?：最小可以没有最大1个</li>
+<li>{0,}/*：最小没有，最大无限</li>
+<li>{1,}/+：最小1个，最大无限</li>
+<li>{n}：固定的次数</li>
+<li>修饰符：i -&gt;  忽略大小写。</li>
+<li>转义符：\</li>
+</ul>
+</blockquote>
           <div class="read-more">
             <a href="/blogs/2017/12/08/RegExp/" class="read-more-link">阅读更多</a>
           </div>
@@ -460,6 +472,8 @@
 <li>自己打造一把趁手的武器，高效率完成前端业务代码。</li>
 </ul>
 </blockquote>
+<p><img src="https://songzhiguo.github.io/lib/images/2964183279-5a06f5964878b_articlex.jpg" alt=""></p>
+<h2 id="常用函数总汇"><a href="#常用函数总汇" class="headerlink" title="常用函数总汇"></a>常用函数总汇</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="1-1arrayEqual"><a href="#1-1arrayEqual" class="headerlink" title="1.1arrayEqual"></a>1.1arrayEqual</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * </span></div><div class="line"><span class="comment"> * @desc 判断两个数组是否相等</span></div><div class="line"><span class="comment"> * @param &#123;Array&#125; arr1 </span></div><div class="line"><span class="comment"> * @param &#123;Array&#125; arr2 </span></div><div class="line"><span class="comment"> * @return &#123;Boolean&#125;</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayEqual</span>(<span class="params">arr1, arr2</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr1 === arr2) <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">if</span> (arr1.length != arr2.length) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.length; ++i) &#123;</div><div class="line">        <span class="keyword">if</span> (arr1[i] !== arr2[i]) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/blogs/2017/12/07/library/" class="read-more-link">阅读更多</a>
           </div>
@@ -556,14 +570,13 @@
       
         
         
-          
-        
 
         
-          <h4 id="大部分IOS系统和少部分Android微信不支持自动播放"><a href="#大部分IOS系统和少部分Android微信不支持自动播放" class="headerlink" title="大部分IOS系统和少部分Android微信不支持自动播放"></a>大部分IOS系统和少部分Android微信不支持自动播放</h4><p>解决方案：监听WeixinJSBridgeReady事件、DOMContentLoaded事件<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/23/autoplay/" class="read-more-link">阅读更多</a>
-          </div>
+          <h4 id="大部分IOS系统和少部分Android微信不支持自动播放"><a href="#大部分IOS系统和少部分Android微信不支持自动播放" class="headerlink" title="大部分IOS系统和少部分Android微信不支持自动播放"></a>大部分IOS系统和少部分Android微信不支持自动播放</h4><p>解决方案：监听WeixinJSBridgeReady事件、DOMContentLoaded事件</p>
+<p>微信的JS API建立在微信壳浏览器的内置JS对象WeixinJSBridge上，WeixinJSBridge并不是WebView一打开就有了，客户端需要初始化这个对象，当这个对象准备好的时候，客户端会抛出事件”WeixinJSBridgeReady”。</p>
+<p>发现部分机型，监听DOMContentLoaded和load事件，在回调中也可以播放音乐；<br>所以，为了保险起见，可以同时监听两个事件，以增强其适用性。<br>代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">audioAutoPlay</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> audio = <span class="built_in">document</span>.getElementById(<span class="string">'bg-music'</span>);</div><div class="line">            audio.play();</div><div class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">"WeixinJSBridgeReady"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            audio.play();</div><div class="line">        &#125;, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">    audioAutoPlay();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
         
       
     </div>
@@ -610,7 +623,9 @@
         
 
         
-          <p>今天要介绍的是，对象之间的”继承”的五种方法。<br>
+          <p>今天要介绍的是，对象之间的”继承”的五种方法。</p>
+<p>比如，现在有一个”动物”对象的构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.species = <span class="string">"动物"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/blogs/2017/11/11/oriented/" class="read-more-link">阅读更多</a>
           </div>
@@ -656,14 +671,13 @@
       
         
         
-          
-        
 
         
-          <p>解决方案是 在弹框出现的时候给body添加fixed<br>
-          <div class="read-more">
-            <a href="/blogs/2017/11/09/pit/" class="read-more-link">阅读更多</a>
-          </div>
+          <p>解决方案是 在弹框出现的时候给body添加fixed</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"body"</span>).css(<span class="string">"position"</span>,<span class="string">"fixed"</span>)</div></pre></td></tr></table></figure>
+<p>当弹框消失的时候</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"body"</span>).css(<span class="string">"position"</span>,<span class="string">"relative"</span>)</div></pre></td></tr></table></figure>
+
         
       
     </div>

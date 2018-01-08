@@ -193,9 +193,10 @@
 
     <div class="post-content">
       
-        <p>今天要介绍的是，对象之间的”继承”的五种方法。<br><a id="more"></a></p>
+        <p>今天要介绍的是，对象之间的”继承”的五种方法。</p>
 <p>比如，现在有一个”动物”对象的构造函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.species = <span class="string">"动物"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>还有一个”猫”对象的构造函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.name = name;</div><div class="line">　　　　<span class="keyword">this</span>.color = color;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
 <p>怎样才能使”猫”继承”动物”呢？</p>
