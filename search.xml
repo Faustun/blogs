@@ -4,6 +4,49 @@
     
     <entry>
       <title><![CDATA[ES6学习笔记：变量的解构赋值]]></title>
+      <url>/blogs/2018/01/09/es6-string/</url>
+      <content type="html"><![CDATA[<h3 id="字符的Unicode表示法"><a href="#字符的Unicode表示法" class="headerlink" title="字符的Unicode表示法"></a>字符的Unicode表示法</h3><p>JavaScript 允许采用\uxxxx形式表示一个字符，其中xxxx表示字符的 Unicode 码点。</p>
+<p>但是，这种表示法只限于码点在\u0000~\uFFFF之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。</p>
+<p>ES6 对这一点做出了改进，只要将码点放入大括号，就能正确解读该字符。</p>
+<a id="more"></a>
+<h3 id="codepointAt"><a href="#codepointAt" class="headerlink" title="codepointAt()"></a>codepointAt()</h3><p>JavaScript 内部，字符以 UTF-16 的格式储存，每个字符固定为2个字节。对于那些需要4个字节储存的字符（Unicode 码点大于0xFFFF的字符），JavaScript 会认为它们是两个字符。</p>
+<p>汉字“𠮷”（注意，这个字不是“吉祥”的“吉”）的码点是0x20BB7，UTF-16 编码为0xD842 0xDFB7（十进制为55362 57271），需要4个字节储存。对于这种4个字节的字符，JavaScript 不能正确处理，字符串长度会误判为2，而且charAt方法无法读取整个字符，charCodeAt方法只能分别返回前两个字节和后两个字节的值。</p>
+<p>ES6 提供了codePointAt方法，能够正确处理 4 个字节储存的字符，返回一个字符的码点。</p>
+<p>总之，codePointAt方法会正确返回 32 位的 UTF-16 字符的码点。对于那些两个字节储存的常规字符，它的返回结果与charCodeAt方法相同。</p>
+<p>codePointAt方法是测试一个字符由两个字节还是由四个字节组成的最简单方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">is32Bit</span>(<span class="params">c</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> c.codePointAt(<span class="number">0</span>) &gt; <span class="number">0xFFFF</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">is32Bit(<span class="string">"𠮷"</span>) <span class="comment">// true</span></div><div class="line">is32Bit(<span class="string">"a"</span>) <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<h3 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h3><p>ES5 提供String.fromCharCode方法，用于从码点返回对应字符，但是这个方法不能识别 32 位的 UTF-16 字符（Unicode 编号大于0xFFFF）。</p>
+<p>ES6 提供了String.fromCodePoint方法，可以识别大于0xFFFF的字符，弥补了String.fromCharCode方法的不足。在作用上，正好与codePointAt方法相反。</p>
+<p>注意，fromCodePoint方法定义在String对象上，而codePointAt方法定义在字符串的实例对象上。</p>
+<h3 id="字符串的遍历器接口"><a href="#字符串的遍历器接口" class="headerlink" title="字符串的遍历器接口"></a>字符串的遍历器接口</h3><p>ES6 为字符串添加了遍历器接口，使得字符串可以被for…of循环遍历。</p>
+<p>除了遍历字符串，这个遍历器最大的优点是可以识别大于0xFFFF的码点，传统的for循环无法识别这样的码点。</p>
+<h3 id="includes-startsWith-endsWith"><a href="#includes-startsWith-endsWith" class="headerlink" title="includes(), startsWith(), endsWith()"></a>includes(), startsWith(), endsWith()</h3><p>includes()：返回布尔值，表示是否找到了参数字符串。</p>
+<p>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。</p>
+<p>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>repeat方法返回一个新字符串，表示将原字符串重复n次。</p>
+<p>参数如果是小数，会被取整。</p>
+<p>如果repeat的参数是负数或者Infinity，会报错。</p>
+<p>但是，如果参数是 0 到-1 之间的小数，则等同于 0，这是因为会先进行取整运算。0 到-1 之间的小数，取整以后等于-0，repeat视同为 0。</p>
+<p>参数NaN等同于 0。</p>
+<p>如果repeat的参数是字符串，则会先转换成数字。</p>
+<h3 id="padStart-，padEnd"><a href="#padStart-，padEnd" class="headerlink" title="padStart()，padEnd()"></a>padStart()，padEnd()</h3><p>ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。</p>
+<p>如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。</p>
+<p>如果用来补全的字符串与原字符串，两者的长度之和超过了指定的最小长度，则会截去超出位数的补全字符串。</p>
+<p>如果省略第二个参数，默认使用空格补全长度</p>
+<p>padStart的常见用途是为数值补全指定位数</p>
+]]></content>
+      
+        <categories>
+            
+            <category> ES6 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ES6学习笔记：变量的解构赋值]]></title>
       <url>/blogs/2018/01/08/deconstruction/</url>
       <content type="html"><![CDATA[<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><p>从数组中提取值，按照对应位置，对变量赋值。</p>
 <p>如果解构不成功，变量的值就等于undefined。</p>

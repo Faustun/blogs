@@ -162,6 +162,58 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/blogs/2018/01/09/es6-string/">ES6学习笔记：变量的解构赋值</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-09
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/blogs/categories/ES6/">ES6</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="字符的Unicode表示法"><a href="#字符的Unicode表示法" class="headerlink" title="字符的Unicode表示法"></a>字符的Unicode表示法</h3><p>JavaScript 允许采用\uxxxx形式表示一个字符，其中xxxx表示字符的 Unicode 码点。</p>
+<p>但是，这种表示法只限于码点在\u0000~\uFFFF之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。</p>
+<p>ES6 对这一点做出了改进，只要将码点放入大括号，就能正确解读该字符。</p>
+          <div class="read-more">
+            <a href="/blogs/2018/01/09/es6-string/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/blogs/2018/01/08/deconstruction/">ES6学习笔记：变量的解构赋值</a>
         
       </h1>
@@ -628,55 +680,6 @@
           <div class="read-more">
             <a href="/blogs/2017/11/11/oriented/" class="read-more-link">阅读更多</a>
           </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/11/09/pit/">IOS中position:fixed弹出框中的input出现光标错位的问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-09
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/blogs/categories/踩坑记录/">踩坑记录</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>解决方案是 在弹框出现的时候给body添加fixed</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"body"</span>).css(<span class="string">"position"</span>,<span class="string">"fixed"</span>)</div></pre></td></tr></table></figure>
-<p>当弹框消失的时候</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"body"</span>).css(<span class="string">"position"</span>,<span class="string">"relative"</span>)</div></pre></td></tr></table></figure>
-
         
       
     </div>
