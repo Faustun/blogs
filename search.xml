@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[ES6学习笔记：变量的解构赋值]]></title>
+      <title><![CDATA[ES6学习笔记：字符串的扩展]]></title>
       <url>/blogs/2018/01/09/es6-string/</url>
       <content type="html"><![CDATA[<h3 id="字符的Unicode表示法"><a href="#字符的Unicode表示法" class="headerlink" title="字符的Unicode表示法"></a>字符的Unicode表示法</h3><p>JavaScript 允许采用\uxxxx形式表示一个字符，其中xxxx表示字符的 Unicode 码点。</p>
 <p>但是，这种表示法只限于码点在\u0000~\uFFFF之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。</p>
@@ -522,6 +522,11 @@
 <td>ECMAScript 6</td>
 <td><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">http://es6.ruanyifeng.com/</a></td>
 <td>ECMAScript 6 入门</td>
+</tr>
+<tr>
+<td>廖雪峰</td>
+<td><a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">https://www.liaoxuefeng.com/</a></td>
+<td>廖雪峰的官方网站</td>
 </tr>
 </tbody>
 </table>
