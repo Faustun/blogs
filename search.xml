@@ -3,6 +3,89 @@
   
     
     <entry>
+      <title><![CDATA[ES6学习笔记：对象的扩展]]></title>
+      <url>/blogs/2018/01/15/es6-object/</url>
+      <content type="html"><![CDATA[<h3 id="属性的简介表示法"><a href="#属性的简介表示法" class="headerlink" title="属性的简介表示法"></a>属性的简介表示法</h3><p>ES6允许直接写入变量和函数，作为对象的属性和方法，书写更加简洁</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="string">'bar'</span>;</div><div class="line"><span class="keyword">const</span> baz = &#123;foo&#125;;</div><div class="line">baz <span class="comment">//&#123;foo: "bar"&#125;</span></div></pre></td></tr></table></figure>
+<p>ES6允许在对象中，直接写变量。这时，属性名为变量名，属性值为变量的值。</p>
+<h3 id="属性名表达式"><a href="#属性名表达式" class="headerlink" title="属性名表达式"></a>属性名表达式</h3><p>javascript定义对象的属性，有两种方法</p>
+<p>方法一是直接用标识符作为属性名，方法二是用表达式作为属性名，这时要将表达式放在方括号内。</p>
+<p>ES6允许字面量定义对象时，用方法二（表达式）作为对象的属性名，既把表达式放在方括号内<br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> propkey = <span class="string">'foo'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    [prokey]: <span class="literal">true</span>,</div><div class="line">    [<span class="string">'a'</span>+<span class="string">'b'</span>]: <span class="number">123</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>表达式还可以定义方法名</p>
+<p>注意，属性名表达式与简洁表示法，不能同时使用，会报错。如果表达式是一个对象，默认情况下会自动将对象转为字符串[object object]。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> keyA = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">const</span> keyB = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> myObject = &#123;</div><div class="line">  [keyA]: <span class="string">'valueA'</span>,</div><div class="line">  [keyB]: <span class="string">'valueB'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">myObject <span class="comment">// Object &#123;[object Object]: "valueB"&#125;</span></div></pre></td></tr></table></figure>
+<p>[keyA]和[keyB]得到的都是[object Object],所以[keyB]会把[keyA]覆盖掉，而myObject最后只有一个[object Object]属性。</p>
+<h3 id="方法的name值"><a href="#方法的name值" class="headerlink" title="方法的name值"></a>方法的name值</h3><p>函数的name属性，返回函数名。对象方法也是函数，因此也有name属性</p>
+<p>方法的name属性返回函数名(既方法名)</p>
+<h3 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a>Object.is()</h3><p>ES5比较两个值是否相等，只有两个运算符：相等运算符(==)和严格相等运算符(===)。他们都有缺点，前者会自动转换数据类型，后者的NaN不等于自身，以及+0等于-0。</p>
+<p>Object.is()用来比较两个值是否严格相等，与严格比较云算符(===)的行为基本一致。不同之处只有两个：<br>一是+0不等于-0，二是NaN等于自身。</p>
+<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>Object.assign()方法用于对象的合并，将原对象的所有可枚举属性，复制到目标对象</p>
+<p>第一个参数是目标对象，后面的参数都是原对象</p>
+<p>注意，如果目标对象与原对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。</p>
+<p>如果只有一个参数，Object.assign会直接返回该参数</p>
+<p>如果该参数不是对象，则会先转成对象，然后返回</p>
+<p>由于undefined和null无法转成对象，所以如果他们作为参数，就会报错</p>
+<p>如果非对象参数出现在源对象的位置（既非首参数），那么处理规则则有不同。首先这些参数都会转为对象，如果无法转为对象，就会跳过，这意味着，如果undefined和null不在首参数，就不会报错。</p>
+<p>其他类型的值（既数值、字符串、布尔值）不在首参数，也不会报错。但是除了字符串会以数组形式，拷贝入目标对象，其他值都不会产生效果。这是应为只有字符串的的包装对象会产生可枚举属性。</p>
+<p>Object.assign拷贝属性是有限的，只拷贝原对象的自身属性（不拷贝继承属性），也不拷贝不可枚举属性。</p>
+<p>属性名为Symbol值的属性,也会被Object.assign拷贝</p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><h5 id="一、浅拷贝"><a href="#一、浅拷贝" class="headerlink" title="一、浅拷贝"></a>一、浅拷贝</h5><p>Object.assign方法实行的是浅拷贝，而不是深拷贝。也就是说，如果对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。</p>
+<h5 id="二、同名属性的替换"><a href="#二、同名属性的替换" class="headerlink" title="二、同名属性的替换"></a>二、同名属性的替换</h5><p>对于这种嵌套的对象，一旦遇到同名属性，Object.assign的处理方法是替换，而不是添加</p>
+<h5 id="三、数组的处理"><a href="#三、数组的处理" class="headerlink" title="三、数组的处理"></a>三、数组的处理</h5><p>Object.assign可以用来处理数组，但是会被数组视为对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.assign([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>])</div><div class="line"><span class="comment">// [4, 5, 3]</span></div></pre></td></tr></table></figure>
+<h5 id="四取值函数的处理"><a href="#四取值函数的处理" class="headerlink" title="四取值函数的处理"></a>四取值函数的处理</h5><p>Object.assign只能进行值的复制，如果要复制的值是一个取值函数，那么将求值后在复制</p>
+<h4 id="常用用途"><a href="#常用用途" class="headerlink" title="常用用途"></a>常用用途</h4><h5 id="一、为对象添加属性"><a href="#一、为对象添加属性" class="headerlink" title="一、为对象添加属性"></a>一、为对象添加属性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(x, y) &#123;</div><div class="line">        <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;x, y&#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="二、为对象添加方法"><a href="#二、为对象添加方法" class="headerlink" title="二、为对象添加方法"></a>二、为对象添加方法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.assign(SomeClass.prototype, &#123;</div><div class="line">    someMethod(arg1, arg2) &#123;</div><div class="line">        ···</div><div class="line">    &#125;,</div><div class="line">    anotherMethod() &#123;</div><div class="line">        ···</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 等同于下面的写法</span></div><div class="line">SomeClass.prototype.someMethod = <span class="function"><span class="keyword">function</span> (<span class="params">arg1, arg2</span>) </span>&#123;</div><div class="line">···</div><div class="line">&#125;;</div><div class="line">SomeClass.prototype.anotherMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">···</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="三、克隆对象"><a href="#三、克隆对象" class="headerlink" title="三、克隆对象"></a>三、克隆对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">origin</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, origin);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值</p>
+<h4 id="四、合并多个对象"><a href="#四、合并多个对象" class="headerlink" title="四、合并多个对象"></a>四、合并多个对象</h4><p>将多个对象合并到某个对象</p>
+<h4 id="五、为属性指定默认值"><a href="#五、为属性指定默认值" class="headerlink" title="五、为属性指定默认值"></a>五、为属性指定默认值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> DEFAULTS = &#123;</div><div class="line">    logLevel: <span class="number">0</span>,</div><div class="line">    outputFormat: <span class="string">'html'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">processContent</span>(<span class="params">options</span>) </span>&#123;</div><div class="line">    options = <span class="built_in">Object</span>.assign(&#123;&#125;, DEFAULTS, options);</div><div class="line">    <span class="built_in">console</span>.log(options);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="属性的可枚举性和遍历"><a href="#属性的可枚举性和遍历" class="headerlink" title="属性的可枚举性和遍历"></a>属性的可枚举性和遍历</h3><h4 id="可枚举性"><a href="#可枚举性" class="headerlink" title="可枚举性"></a>可枚举性</h4><p>对象的每个属性都有一个描述对象，用来控制该属性的行为。</p>
+<p>Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">foo</span>: <span class="number">123</span> &#125;;</div><div class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'foo'</span>)</div><div class="line"><span class="comment">//  &#123;</span></div><div class="line"><span class="comment">//    value: 123,</span></div><div class="line"><span class="comment">//    writable: true,</span></div><div class="line"><span class="comment">//    enumerable: true,</span></div><div class="line"><span class="comment">//    configurable: true</span></div><div class="line"><span class="comment">//  &#125;</span></div></pre></td></tr></table></figure>
+<p>描述对象的enumerable属性，称为“可枚举性”，如果该属性为false,就表示某些操作会忽略当前属性</p>
+<p>目前，有四个操作会忽略enumerable为fales的属性。</p>
+<blockquote>
+<ul>
+<li>  for…in循环：只遍历对象自身的和继承的可枚举的属性。<br>  Object.keys()：返回对象自身的所有可枚举的属性的键名。<br>  JSON.stringify()：只串行化对象自身的可枚举的属性。<br>  Object.assign()： 忽略enumerable为false的属性，只拷贝对象自身的可枚举的属性。</li>
+<li></li>
+</ul>
+</blockquote>
+<p>这四个操作之中,只有for…in会返回继承的属性，其他三个方法都会忽略继承的属性，只处理对象自身的属性。</p>
+<p>实际上，引入“可枚举”（enumerable）这个概念的最初目的，就是让某些属性可以规避掉for…in操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的toString方法，以及数组的length属性，就通过“可枚举性”，从而避免被for…in遍历到。</p>
+<p>toString和length属性的enumerable都是false，因此for…in不会遍历到这两个继承自原型的属性。</p>
+<p>另外，ES6 规定，所有 Class 的原型的方法都是不可枚举的。</p>
+<p>总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。所以，尽量不要用for…in循环，而用Object.keys()代替。</p>
+<h4 id="属性的遍历"><a href="#属性的遍历" class="headerlink" title="属性的遍历"></a>属性的遍历</h4><p>ES6 一共有 5 种方法可以遍历对象的属性。</p>
+<p>(1)for…in循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</p>
+<p>(2)Object.keys返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</p>
+<p>(3)Object.getOwnPropertyNames返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</p>
+<p>(4)bject.getOwnPropertySymbols返回一个数组，包含对象自身的所有 Symbol 属性的键名。</p>
+<p>(5)Reflect.ownKeys返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</p>
+<p>以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p>
+<blockquote>
+<p>-<br>    首先遍历所有数值键，按照数值升序排列。<br>    其次遍历所有字符串键，按照加入时间升序排列。<br>    最后遍历所有 Symbol 键，按照加入时间升序排列。<br>-</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">Reflect</span><span class="selector-class">.ownKeys</span>(&#123; <span class="selector-attr">[Symbol()]</span><span class="selector-pseudo">:0</span>, <span class="selector-tag">b</span><span class="selector-pseudo">:0</span>, <span class="selector-tag">10</span><span class="selector-pseudo">:0</span>, <span class="selector-tag">2</span><span class="selector-pseudo">:0</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:0</span> &#125;)</div><div class="line"><span class="comment">// ['2', '10', 'b', 'a', Symbol()]</span></div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> ES6 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[ES6学习笔记：数组的扩展]]></title>
       <url>/blogs/2018/01/12/es6_array/</url>
       <content type="html"><![CDATA[<h3 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h3><p>扩展运算符（spread）是三个点…，它好比是rest参数的逆运算，将一个数组转化为用逗号分隔的参数序列。</p>
