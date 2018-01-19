@@ -162,6 +162,62 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/blogs/2018/01/19/es6-Promise/">ES6学习笔记：Promise对象</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-19
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/blogs/categories/ES6/">ES6</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="Promise的含义"><a href="#Promise的含义" class="headerlink" title="Promise的含义"></a>Promise的含义</h3><p>Promise是异步编程的一种解决方案</p>
+<p>Promise简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果</p>
+<p>从语法上说，Promise是一个对象，从它可以获取异步操作的消息。</p>
+<p>Promise对象有以下两个特点</p>
+<p>（1）、对象的状态不受外界的影响。Promise对象代表一个异步操作，有三种状态：pending(进行中)、fulfilled(已成功)和rejected(已失败)。只有异步操作的结果，可以决定当前是哪一个状态，任何其他操作都无法改变这个状态。</p>
+<p>（2）、一旦状态改变，就不会在变，任何时候都可以得到这个结果。状态改变，只有两种可能，从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就会凝固，不会在变了会一直保持这个结果，这时就称为resolved</p>
+<p>Promise的缺点：首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，promise内部抛出的错误，不会反应到外部。第三，当处于pending状态时，无法得知进展到哪一个阶段<br>
+          <div class="read-more">
+            <a href="/blogs/2018/01/19/es6-Promise/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/blogs/2018/01/18/es6-set-map/">ES6学习笔记：Set和Map数据结构</a>
         
       </h1>
@@ -632,57 +688,6 @@
 </blockquote>
           <div class="read-more">
             <a href="/blogs/2017/12/13/date/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/blogs/2017/12/11/string/">字符串常用方法</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-11
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>字符串：由0个或多个字符组成的串，只能读取，不能设置。</p>
-<blockquote>
-<ul>
-<li>string.方法名(参数1,[参数2])，返回值类型</li>
-<li>参数列表</li>
-<li>[]:可选参数</li>
-</ul>
-</blockquote>
-          <div class="read-more">
-            <a href="/blogs/2017/12/11/string/" class="read-more-link">阅读更多</a>
           </div>
         
       
