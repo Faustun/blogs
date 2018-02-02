@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzhiguo.github.io/blogs/about/index.html</loc>
+    
+    <lastmod>2018-02-02T06:04:04.504Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://songzhiguo.github.io/blogs/2017/11/08/this/</loc>
     
     <lastmod>2018-02-02T04:03:25.429Z</lastmod>
@@ -131,13 +138,6 @@
     <loc>https://songzhiguo.github.io/blogs/2017/12/29/Array/</loc>
     
     <lastmod>2018-02-02T03:56:56.288Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://songzhiguo.github.io/blogs/about/index.html</loc>
-    
-    <lastmod>2017-11-08T14:58:25.504Z</lastmod>
     
   </url>
   
