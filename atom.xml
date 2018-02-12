@@ -6,7 +6,7 @@
   <link href="/blogs/atom.xml" rel="self"/>
   
   <link href="https://songzhiguo.github.io/blogs/"/>
-  <updated>2018-02-09T08:45:40.389Z</updated>
+  <updated>2018-02-12T01:30:39.827Z</updated>
   <id>https://songzhiguo.github.io/blogs/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pythonWeb</title>
+    <link href="https://songzhiguo.github.io/blogs/2018/02/12/pythonWeb/"/>
+    <id>https://songzhiguo.github.io/blogs/2018/02/12/pythonWeb/</id>
+    <published>2018-02-12T01:19:58.000Z</published>
+    <updated>2018-02-12T01:30:39.827Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="国内python学习网站"><a href="#国内python学习网站" class="headerlink" title="国内python学习网站"></a>国内python学习网站</h4><table><thead><tr><th>名称</th><th>地址</th><th>地址</th></tr></thead><tbody><tr><td>PythonTip</td><td><a href="http://www.pythontip.com/" target="_blank" rel="external">http://www.pythontip.com/</a></td><td>提供python入门教程， 技术交流， 在线实践等一条龙服务</td></tr></tbody></table><h4 id="国外python学习网站"><a href="#国外python学习网站" class="headerlink" title="国外python学习网站"></a>国外python学习网站</h4><table><thead><tr><th>名称</th><th>地址</th></tr></thead><tbody><tr><td>PythonTip</td><td><a href="http://www.pythontip.com/" target="_blank" rel="external">http://www.pythontip.com/</a></td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;国内python学习网站&quot;&gt;&lt;a href=&quot;#国内python学习网站&quot; class=&quot;headerlink&quot; title=&quot;国内python学习网站&quot;&gt;&lt;/a&gt;国内python学习网站&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>小程序学习笔记</title>
     <link href="https://songzhiguo.github.io/blogs/2018/02/08/small-program/"/>
     <id>https://songzhiguo.github.io/blogs/2018/02/08/small-program/</id>
     <published>2018-02-08T03:28:47.000Z</published>
-    <updated>2018-02-09T08:45:40.389Z</updated>
+    <updated>2018-02-11T08:13:07.131Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p>微信小程序很小，安装包体积不超过1M，实际上，当用户点击小程序到打开已经经历了从下载到安装，只是这个过程很快，</p><p>微信小程序使用流程简单，跨平台使用</p><h3 id="小程序适合做什么样的应用？"><a href="#小程序适合做什么样的应用？" class="headerlink" title="小程序适合做什么样的应用？"></a>小程序适合做什么样的应用？</h3><blockquote><ul><li>三个特点：</li><li>1、业务逻辑简单，用完即走</li><li>2、使用频率低</li><li>3、性能要求不高</li></ul></blockquote><p>不适合：<br>社区型、直播、复杂手游</p><p>适合：<br>订餐、打车<br>大型应用可拆分部分功能</p><h3 id="移动设备的分辨率与rpx"><a href="#移动设备的分辨率与rpx" class="headerlink" title="移动设备的分辨率与rpx"></a>移动设备的分辨率与rpx</h3><p><img src="https://songzhiguo.github.io/lib/images/px.jpg" alt=""></p><p>pt也称为逻辑分辨率<br>1个pt可以有1个px构成，也可以有2个，还可以有3个甚至更多组成</p><p>pt的大小和屏幕尺寸有关系，简单可以理解为长度和视觉单位</p><p>px指物理分辨率，和屏幕尺寸没有关系。</p><h4 id="小程序如何做不同分辨率设备的自适应"><a href="#小程序如何做不同分辨率设备的自适应" class="headerlink" title="小程序如何做不同分辨率设备的自适应"></a>小程序如何做不同分辨率设备的自适应</h4><p>以iphone6的物理像素750x1334为视觉稿进行设计，而在小程序中使用rpx为单位</p><p>iphone6下 1px = 1rpx = 0.5pt</p><p>使用rpx，小程序会自动在不同分辨率下进行转换，而使用px为单位不会</p><p>不是所有的单位都适合用rpx</p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><p>微信小程序很小，安装包体积不超过1M，实际上，当用户点击小程序到打开已经经历了从下载到安装，只是这个过程很快，</p><p>微信小程序使用流程简单，跨平台使用</p><h3 id="小程序适合做什么样的应用？"><a href="#小程序适合做什么样的应用？" class="headerlink" title="小程序适合做什么样的应用？"></a>小程序适合做什么样的应用？</h3><blockquote><ul><li>三个特点：</li><li>1、业务逻辑简单，用完即走</li><li>2、使用频率低</li><li>3、性能要求不高</li></ul></blockquote><p>不适合：<br>社区型、直播、复杂手游</p><p>适合：<br>订餐、打车<br>大型应用可拆分部分功能</p><h3 id="移动设备的分辨率与rpx"><a href="#移动设备的分辨率与rpx" class="headerlink" title="移动设备的分辨率与rpx"></a>移动设备的分辨率与rpx</h3><p><img src="https://songzhiguo.github.io/lib/images/px.jpg" alt=""></p><p>pt也称为逻辑分辨率<br>1个pt可以有1个px构成，也可以有2个，还可以有3个甚至更多组成</p><p>pt的大小和屏幕尺寸有关系，简单可以理解为长度和视觉单位</p><p>px指物理分辨率，和屏幕尺寸没有关系。</p><h4 id="小程序如何做不同分辨率设备的自适应"><a href="#小程序如何做不同分辨率设备的自适应" class="headerlink" title="小程序如何做不同分辨率设备的自适应"></a>小程序如何做不同分辨率设备的自适应</h4><p>以iphone6的物理像素750x1334为视觉稿进行设计，而在小程序中使用rpx为单位</p><p>iphone6下 1px = 1rpx = 0.5pt</p><p>使用rpx，小程序会自动在不同分辨率下进行转换，而使用px为单位不会</p><p>不是所有的单位都适合用rpx</p><p>事件中target指的是当前点击的组件 和currentTarget 指的是时间捕获的组件</p>]]></content>
     
     <summary type="html">
     
@@ -404,26 +429,6 @@
     </summary>
     
       <category term="转载收藏" scheme="https://songzhiguo.github.io/blogs/categories/%E8%BD%AC%E8%BD%BD%E6%94%B6%E8%97%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>前端收集</title>
-    <link href="https://songzhiguo.github.io/blogs/2017/11/08/collect/"/>
-    <id>https://songzhiguo.github.io/blogs/2017/11/08/collect/</id>
-    <published>2017-11-08T11:28:53.000Z</published>
-    <updated>2018-02-02T06:29:58.322Z</updated>
-    
-    <content type="html"><![CDATA[<p>在前端路上摸索前行，在这里分享自己长期关注的前端开发相关的优秀网站、博客、以及活跃开发者。<br><a id="more"></a></p><h4 id="前端技术文档"><a href="#前端技术文档" class="headerlink" title="前端技术文档"></a>前端技术文档</h4><table><thead><tr><th>名称</th><th>地址</th><th>介绍</th></tr></thead><tbody><tr><td>MDN</td><td><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/</a></td><td>开发者文档</td></tr><tr><td>w3cplus</td><td><a href="https://www.w3cplus.com/" target="_blank" rel="external">https://www.w3cplus.com/</a></td><td>前端技术文章</td></tr><tr><td>阮一峰</td><td><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">http://www.ruanyifeng.com/blog/</a></td><td>阮一峰网络日志</td></tr><tr><td>ECMAScript 6</td><td><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">http://es6.ruanyifeng.com/</a></td><td>ECMAScript 6 入门</td></tr><tr><td>廖雪峰</td><td><a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">https://www.liaoxuefeng.com/</a></td><td>廖雪峰的官方网站</td></tr><tr><td>张鑫旭</td><td><a href="http://www.zhangxinxu.com/" target="_blank" rel="external">http://www.zhangxinxu.com/</a></td><td>张鑫旭的官方网站</td></tr><tr><td>百度EFE</td><td><a href="http://efe.baidu.com/" target="_blank" rel="external">http://efe.baidu.com/</a></td><td>百度前端团队</td></tr><tr><td>腾讯前端</td><td><a href="http://alloyteam.github.io//" target="_blank" rel="external">http://alloyteam.github.io//</a></td><td>Tencent AlloyTeam</td></tr><tr><td>淘宝前端</td><td><a href="http://taobaofed.org/" target="_blank" rel="external">http://taobaofed.org/</a></td><td>淘宝前端团队</td></tr></tbody></table><h4 id="css工具"><a href="#css工具" class="headerlink" title="css工具"></a>css工具</h4><table><thead><tr><th>名称</th><th>地址</th><th>介绍</th></tr></thead><tbody><tr><td>Iconfont</td><td><a href="http://www.iconfont.cn/" target="_blank" rel="external">http://www.iconfont.cn/</a></td><td>阿里矢量图标库</td></tr><tr><td>IcoMoon</td><td><a href="https://icomoon.io/" target="_blank" rel="external">https://icomoon.io/</a></td><td>制作字体图标</td></tr><tr><td>Font Awesome</td><td><a href="http://fontawesome.dashgame.com/" target="_blank" rel="external">http://fontawesome.dashgame.com/</a></td><td>图标字体库和CSS框架</td></tr><tr><td>Can I use</td><td><a href="https://caniuse.com/" target="_blank" rel="external">https://caniuse.com/</a></td><td>Support tables for HTML5, CSS3</td></tr><tr><td>Normalize</td><td><a href="http://necolas.github.io/normalize.css/" target="_blank" rel="external">http://necolas.github.io/normalize.css/</a></td><td>HTML5的替代CSS重置</td></tr><tr><td>Pleeease Play</td><td><a href="http://pleeease.io/play/" target="_blank" rel="external">http://pleeease.io/play/</a></td><td>CSS3前缀，rem转换，CSS过滤器</td></tr><tr><td>TinyPNG</td><td><a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a></td><td>智能PNG和JPEG压缩</td></tr><tr><td>loading</td><td><a href="https://loading.io/" target="_blank" rel="external">https://loading.io/</a></td><td>轻松制作精美的 Loading 图标工具</td></tr><tr><td>animation</td><td><a href="https://www.w3cways.com/css3-animation-guide" target="_blank" rel="external">https://www.w3cways.com/css3-animation-guide</a></td><td>css3动画在线编辑</td></tr></tbody></table><h4 id="javascript工具"><a href="#javascript工具" class="headerlink" title="javascript工具"></a>javascript工具</h4><table><thead><tr><th>名称</th><th>地址</th><th>介绍</th></tr></thead><tbody><tr><td>babeljs</td><td><a href="https://babeljs.io/" target="_blank" rel="external">https://babeljs.io/</a></td><td>The compiler for writing next generation JavaScript</td></tr><tr><td>BootCDN</td><td><a href="http://www.bootcdn.cn/" target="_blank" rel="external">http://www.bootcdn.cn/</a></td><td>前端开源项目 CDN 加速服务</td></tr></tbody></table><h4 id="优质文章"><a href="#优质文章" class="headerlink" title="优质文章"></a>优质文章</h4><table><thead><tr><th>名称</th><th>地址</th><th>介绍</th></tr></thead><tbody><tr><td>前端学习资源总结</td><td><a href="https://juejin.im/post/5a0c1956f265da430a501f51" target="_blank" rel="external">https://juejin.im/post/5a0c1956f265da430a501f51</a></td><td>前端学习资源总结</td></tr><tr><td>最全正则表达式总结</td><td><a href="http://www.lovebxm.com/2017/05/31/RegExp/" target="_blank" rel="external">http://www.lovebxm.com/2017/05/31/RegExp/</a></td><td>验证QQ号、手机号、IP地址等</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在前端路上摸索前行，在这里分享自己长期关注的前端开发相关的优秀网站、博客、以及活跃开发者。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="折腾工具" scheme="https://songzhiguo.github.io/blogs/categories/%E6%8A%98%E8%85%BE%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
