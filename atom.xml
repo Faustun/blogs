@@ -6,7 +6,7 @@
   <link href="/blogs/atom.xml" rel="self"/>
   
   <link href="https://songzhiguo.github.io/blogs/"/>
-  <updated>2018-03-12T04:36:40.684Z</updated>
+  <updated>2018-03-15T07:05:35.421Z</updated>
   <id>https://songzhiguo.github.io/blogs/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>setup-obj</title>
+    <link href="https://songzhiguo.github.io/blogs/2018/03/15/setup-obj/"/>
+    <id>https://songzhiguo.github.io/blogs/2018/03/15/setup-obj/</id>
+    <published>2018-03-15T06:19:08.000Z</published>
+    <updated>2018-03-15T07:05:35.421Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。</p><p>构造函数本身也是函数，只不过可以用来创建对象而已</p><p>创建实例对象，需要使用new操作符，以这种方式调用构造函数实际上会经历以下4个步骤</p><blockquote><ul><li>1、创建一个新对象；</li><li>2、将构造函数的作用域赋值给新对象（因此this就指向了这个新对象）；</li><li>3、执行构造函数中的代码（为这个新对象添加属性）；</li><li>4、返回新对象</li></ul></blockquote><h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>我们创建的每一个函数都有一个prototype,这个属性指向函数的原型对象,在默认情况下，所有原型对象都<br>会自动获得一个constructor（构造函数）属性。这个属性包含一个指向prototype属性所在函数的指针</p><p>创建了自定义的构造函数之后，其原型对象默认只会取得constructor属性；至于其他方法，则都是从Object继承而来的。</p><p>当调用构造函数创建一个新实例后，该实例的内部将包含一个指针（内部属性），指向构造函数的原型对象。<br>ECMA-262第5版中管这个指针叫[[Prototype]]。虽然在脚本中没有标准的方式访问[[Prototype]]，但Firefox、Safari和Chrome在每个对象上都支持一个属性<strong>proto</strong>；这个连接存在于实例与构造函数的原型对象之间，而不是存在于实例与构造函数之间。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = “Nicholas”;</div><div class="line">Person.prototype.age = <span class="number">29</span>;</div><div class="line">Person.prototype.job = “Software Engineer”;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.sayName(); <span class="comment">//“Nicholas”</span></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">person2.sayName(); <span class="comment">//“Nicholas”</span></div><div class="line">alert(person1.sayName == person2.sayName); <span class="comment">//true</span></div></pre></td></tr></table></figure><p>以前面使用Person构造函数和Person.prototype创建实例的代码为例，如图</p><p><img src="https://songzhiguo.github.io/lib/images/prototype.jpg" alt=""></p><p>在此，Person.prototype指向了原型对象，而Person.prototype.constructor又指回了Person。</p><p>原型对象中除了包含constructor属性之外，还包括后来添加的其他属性。Person的每个实例——person1和person2都包含一个内部属性，该属性仅仅指向了Person.prototype；换句话说，它们与构造函数没有直接的关系。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;构造函数&quot;&gt;&lt;a href=&quot;#构造函数&quot; class=&quot;headerlink&quot; title=&quot;构造函数&quot;&gt;&lt;/a&gt;构造函数&lt;/h3&gt;&lt;p&gt;按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。&lt;/p&gt;
+&lt;p&gt;构造函数本身也是函数，
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>python学习网站</title>
@@ -432,28 +456,6 @@
     
       <category term="pit" scheme="https://songzhiguo.github.io/blogs/categories/pit/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript的this用法</title>
-    <link href="https://songzhiguo.github.io/blogs/2017/11/08/this/"/>
-    <id>https://songzhiguo.github.io/blogs/2017/11/08/this/</id>
-    <published>2017-11-08T14:20:45.000Z</published>
-    <updated>2018-03-12T04:37:48.755Z</updated>
-    
-    <content type="html"><![CDATA[<p>this是Javascript语言的一个关键字。<br><a id="more"></a></p><p>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123; </div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>; </div><div class="line">　　&#125;</div></pre></td></tr></table></figure><p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象。<br>下面分四种情况，详细讨论this的用法。</p><h4 id="情况一：纯粹的函数调用"><a href="#情况一：纯粹的函数调用" class="headerlink" title="情况一：纯粹的函数调用"></a>情况一：纯粹的函数调用</h4><p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。<br>请看下面这段代码，它的运行结果是1。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">　　　　alert(<span class="keyword">this</span>.x);</div><div class="line">　　&#125;</div><div class="line">　　test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure><p>为了证明this就是全局对象，我对代码做一些改变：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　alert(<span class="keyword">this</span>.x);</div><div class="line">　　&#125;</div><div class="line">　　test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure><p>运行结果还是1。再变一下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">0</span>;</div><div class="line">　　&#125;</div><div class="line">　　test();</div><div class="line">　　alert(x); <span class="comment">//0</span></div></pre></td></tr></table></figure><h4 id="情况二：作为对象方法的调用"><a href="#情况二：作为对象方法的调用" class="headerlink" title="情况二：作为对象方法的调用"></a>情况二：作为对象方法的调用</h4><p>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　alert(<span class="keyword">this</span>.x);</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">　　o.x = <span class="number">1</span>;</div><div class="line">　　o.m = test;</div><div class="line">　　o.m(); <span class="comment">// 1</span></div></pre></td></tr></table></figure><h4 id="情况三-作为构造函数调用"><a href="#情况三-作为构造函数调用" class="headerlink" title="情况三 作为构造函数调用"></a>情况三 作为构造函数调用</h4><p>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> o = <span class="keyword">new</span> test();</div><div class="line">　　alert(o.x); <span class="comment">// 1</span></div></pre></td></tr></table></figure><p>运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">　<span class="keyword">var</span> x = <span class="number">2</span>;</div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> o = <span class="keyword">new</span> test();</div><div class="line">　　alert(x); <span class="comment">//2</span></div></pre></td></tr></table></figure><p>运行结果为2，表明全局变量x的值根本没变。</p><h4 id="情况四-apply调用"><a href="#情况四-apply调用" class="headerlink" title="情况四 apply调用"></a>情况四 apply调用</h4><p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　alert(<span class="keyword">this</span>.x);</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> o=&#123;&#125;;</div><div class="line">　　o.x = <span class="number">1</span>;</div><div class="line">　　o.m = test;</div><div class="line">　　o.m.apply(); <span class="comment">//0</span></div></pre></td></tr></table></figure><p>apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。<br>如果把最后一行代码修改为</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　o.m.apply(o); <span class="comment">//1</span></div></pre></td></tr></table></figure><p>运行结果就变成了1，证明了这时this代表的是对象o。</p><p>（完）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;this是Javascript语言的一个关键字。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/tags/javascript/"/>
     
   </entry>
   

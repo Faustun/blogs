@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-cn" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>setup-obj · SongZhiguo</title><meta name="description" content="setup-obj - Songzhiguo powered by Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blogs/favicon.ico"><link rel="stylesheet" href="//at.alicdn.com/t/font_1472710214_6648843.css"><link rel="stylesheet" href="//songzhiguo.github.io/lib/css/blog/main.css?v=1.0.3"></head><body class="pupa"><div class="loading-bar"></div><header><div class="container"><a href="/blogs/" class="logo"><img src="/blogs/logo.png"></a><span class="span-holder"></span><nav><a href="/blogs/" target="_self"><i class="fa icon-home"></i></a><a href="/blogs/archives/" target="_self"><i class="fa icon-archive"></i></a><a href="/blogs/about/" target="_self"><i class="fa icon-about"></i></a></nav></div></header><main><div class="post post"><article itemscope itemtype="http://schema.org/Article" class="hentry"><div class="container"><div class="entry-header"><h1 class="entry-title">setup-obj</h1><div class="entry-description"></div><div class="entry-meta"><time itemprop="datePublished" datetime="星期四, 三月 15日 2018, 2:19:08 下午" class="updated">2018年3月15日</time><em class="post-count">853 words</em></div></div><div itemprop="articleBody" class="entry-content"><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。</p>
+<p>构造函数本身也是函数，只不过可以用来创建对象而已</p>
+<p>创建实例对象，需要使用new操作符，以这种方式调用构造函数实际上会经历以下4个步骤</p>
+<blockquote>
+<ul>
+<li>1、创建一个新对象；</li>
+<li>2、将构造函数的作用域赋值给新对象（因此this就指向了这个新对象）；</li>
+<li>3、执行构造函数中的代码（为这个新对象添加属性）；</li>
+<li>4、返回新对象</li>
+</ul>
+</blockquote>
+<h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>我们创建的每一个函数都有一个prototype,这个属性指向函数的原型对象,在默认情况下，所有原型对象都<br>会自动获得一个constructor（构造函数）属性。这个属性包含一个指向prototype属性所在函数的指针</p>
+<p>创建了自定义的构造函数之后，其原型对象默认只会取得constructor属性；至于其他方法，则都是从Object继承而来的。</p>
+<p>当调用构造函数创建一个新实例后，该实例的内部将包含一个指针（内部属性），指向构造函数的原型对象。<br>ECMA-262第5版中管这个指针叫[[Prototype]]。虽然在脚本中没有标准的方式访问[[Prototype]]，但Firefox、Safari和Chrome在每个对象上都支持一个属性<strong>proto</strong>；这个连接存在于实例与构造函数的原型对象之间，而不是存在于实例与构造函数之间。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = “Nicholas”;</div><div class="line">Person.prototype.age = <span class="number">29</span>;</div><div class="line">Person.prototype.job = “Software Engineer”;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.sayName(); <span class="comment">//“Nicholas”</span></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">person2.sayName(); <span class="comment">//“Nicholas”</span></div><div class="line">alert(person1.sayName == person2.sayName); <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<p>以前面使用Person构造函数和Person.prototype创建实例的代码为例，如图</p>
+<p><img src="https://songzhiguo.github.io/lib/images/prototype.jpg" alt=""></p>
+<p>在此，Person.prototype指向了原型对象，而Person.prototype.constructor又指回了Person。</p>
+<p>原型对象中除了包含constructor属性之外，还包括后来添加的其他属性。Person的每个实例——person1和person2都包含一个内部属性，该属性仅仅指向了Person.prototype；换句话说，它们与构造函数没有直接的关系。</p>
+</div><div class="entry-extra"><div class="entry-tags"><a href="/blogs/tags/javascript/" class="tag">javascript</a></div></div></div></article></div></main><footer><div class="copyright container"><p>© Copyright 2018 by <a href="https://songzhiguo.github.io/blogs">Songzhiguo powered by Hexo</a>.</p></div></footer><script async src="//cdn.bootcss.com/mathjax/2.7.0-beta.0/MathJax.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-69822347-1",'auto');
+ga('set', 'appName',"SongZhiguo");
+ga('send','pageview');</script><script>(function () { var sid =500303098;cid =500303108;var hm = document.createElement('script');
+hm.src = 'https://songzhiguo.github.io/lib/js/blog/stats.js';
+hm.setAttribute('name', 'MTAH5'); hm.setAttribute('sid', sid); hm.setAttribute('cid', cid);
+var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);
+}())</script><script>var _vds = _vds || [];
+window._vds = _vds;
+(function(){
+  ;_vds.push(['setAccountId',"90b580e047dd0007"  ]);
+  (function() {
+      var vds = document.createElement('script');
+      vds.type='text/javascript';
+      vds.async = true;
+      vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(vds, s);
+  })();
+})();</script><script async src="//raw.githack.com/Easyfood/pageAccelerator/master/dist/page-accelerator.min.js"></script><script async src="/blogs/script/loading.js"></script><script async src="/blogs/script/photo.js"></script></body></html>
