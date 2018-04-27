@@ -6,7 +6,7 @@
   <link href="/blogs/atom.xml" rel="self"/>
   
   <link href="https://songzhiguo.github.io/blogs/"/>
-  <updated>2018-03-28T11:59:17.970Z</updated>
+  <updated>2018-04-27T06:37:46.232Z</updated>
   <id>https://songzhiguo.github.io/blogs/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>element-ui使用问题记录</title>
+    <link href="https://songzhiguo.github.io/blogs/2018/04/27/record-element/"/>
+    <id>https://songzhiguo.github.io/blogs/2018/04/27/record-element/</id>
+    <published>2018-04-27T06:24:19.000Z</published>
+    <updated>2018-04-27T06:37:46.232Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h3><p>  按照官网将 .babelrc 修改为：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>: [[<span class="string">"es2015"</span>, &#123; <span class="attr">"modules"</span>: <span class="literal">false</span> &#125;]],</div><div class="line">  <span class="attr">"plugins"</span>: [</div><div class="line">    [</div><div class="line">      <span class="string">"component"</span>,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"libraryName"</span>: <span class="string">"element-ui"</span>,</div><div class="line">        <span class="attr">"styleLibraryName"</span>: <span class="string">"theme-chalk"</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>使用扩展符会报错问题<br>在将.babelrc 修改为：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>: [[<span class="string">"es2015"</span>, &#123; <span class="attr">"modules"</span>: <span class="literal">false</span> &#125;], <span class="string">"stage-3"</span>],</div><div class="line">  <span class="attr">"plugins"</span>: [</div><div class="line">    [</div><div class="line">      <span class="string">"component"</span>,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"libraryName"</span>: <span class="string">"element-ui"</span>,</div><div class="line">        <span class="attr">"styleLibraryName"</span>: <span class="string">"theme-chalk"</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;按需加载&quot;&gt;&lt;a href=&quot;#按需加载&quot; class=&quot;headerlink&quot; title=&quot;按需加载&quot;&gt;&lt;/a&gt;按需加载&lt;/h3&gt;&lt;p&gt;  按照官网将 .babelrc 修改为：&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;tabl
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用axios post 提交数据,后台获取不到提交的数据</title>
@@ -442,26 +464,6 @@
       &lt;p&gt;总结几种常见的Loading效果&lt;br&gt;
     
     </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>移动端背景音乐自动播放问题</title>
-    <link href="https://songzhiguo.github.io/blogs/2017/11/23/autoplay/"/>
-    <id>https://songzhiguo.github.io/blogs/2017/11/23/autoplay/</id>
-    <published>2017-11-23T13:55:58.000Z</published>
-    <updated>2018-03-12T04:40:51.727Z</updated>
-    
-    <content type="html"><![CDATA[<p>大部分IOS系统和少部分Android微信不支持自动播放<br><a id="more"></a> </p><p>解决方案：监听WeixinJSBridgeReady事件、DOMContentLoaded事件</p><p>微信的JS API建立在微信壳浏览器的内置JS对象WeixinJSBridge上，WeixinJSBridge并不是WebView一打开就有了，客户端需要初始化这个对象，当这个对象准备好的时候，客户端会抛出事件”WeixinJSBridgeReady”。</p><p>发现部分机型，监听DOMContentLoaded和load事件，在回调中也可以播放音乐；<br>所以，为了保险起见，可以同时监听两个事件，以增强其适用性。<br>代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">audioAutoPlay</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> audio = <span class="built_in">document</span>.getElementById(<span class="string">'bg-music'</span>);</div><div class="line">            audio.play();</div><div class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">"WeixinJSBridgeReady"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            audio.play();</div><div class="line">        &#125;, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">    audioAutoPlay();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;大部分IOS系统和少部分Android微信不支持自动播放&lt;br&gt;
-    
-    </summary>
-    
-      <category term="pit" scheme="https://songzhiguo.github.io/blogs/categories/pit/"/>
     
     
   </entry>
