@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzhiguo.github.io/blogs/2018/05/11/uploadqiniu/</loc>
+    
+    <lastmod>2018-05-11T06:07:40.554Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://songzhiguo.github.io/blogs/2018/03/17/assembly-vue/</loc>
+    
+    <lastmod>2018-05-08T02:53:22.595Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://songzhiguo.github.io/blogs/2018/04/27/record-element/</loc>
     
     <lastmod>2018-04-27T06:37:46.232Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://songzhiguo.github.io/blogs/2018/03/28/axios/</loc>
     
     <lastmod>2018-03-28T11:59:17.970Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://songzhiguo.github.io/blogs/2018/03/17/assembly-vue/</loc>
-    
-    <lastmod>2018-03-17T01:45:39.792Z</lastmod>
     
   </url>
   
