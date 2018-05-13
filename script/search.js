@@ -87,12 +87,11 @@ searchFunc(path, 'local-search-input', 'local-search-result');
 
 $(function() {
     $(document).on('click', '.search', function () {
-        console.log(111111)
         $('body').addClass('modal-open');
         $('.modal').show().addClass('in');
         $('.popup').show();
     });
-    $('#popupClose').click(function () {
+    $(document).on('click', '#popupClose', function () {
         $('body').removeClass('modal-open');
         $('.modal').hide().removeClass('in');
         $('.popup').hide();
