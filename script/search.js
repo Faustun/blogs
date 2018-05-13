@@ -77,8 +77,8 @@ var searchFunc = function(path, search_id, content_id) {
                         }
                     }
                 })
-                console.log(str)
                 $resultContent.innerHTML = str;
+                console.log($resultContent)
             })
         }
     })
