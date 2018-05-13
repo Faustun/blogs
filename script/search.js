@@ -85,13 +85,16 @@ var searchFunc = function(path, search_id, content_id) {
 var path = "/blogs/search.xml";
 searchFunc(path, 'local-search-input', 'local-search-result');
 
-$('.search').click(function () {
-    $('body').addClass('modal-open');
-    $('.modal').show().addClass('in');
-    $('.popup').show();
-});
-$('#popupClose').click(function () {
-    $('body').removeClass('modal-open');
-    $('.modal').hide().removeClass('in');
-    $('.popup').hide();
+$(function() {
+    $('.search').click(function () {
+        console.log(111111)
+        $('body').addClass('modal-open');
+        $('.modal').show().addClass('in');
+        $('.popup').show();
+    });
+    $('#popupClose').click(function () {
+        $('body').removeClass('modal-open');
+        $('.modal').hide().removeClass('in');
+        $('.popup').hide();
+    })
 })
