@@ -77,7 +77,8 @@ var searchFunc = function(path, search_id, content_id) {
                         }
                     }
                 })
-                $resultContent.innerHTML = str;
+                $('#'+ content_id).html(str)
+                // $resultContent.innerHTML = str;
             })
         }
     })
