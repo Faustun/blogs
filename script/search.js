@@ -55,7 +55,6 @@ var searchFunc = function(path, search_id, content_id) {
                         str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>" + data_title +"</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g,"");
                         if (first_occur >= 0) {
-                            console.log(11111)
                             // 拿出含有搜索字的部分
                             var start = first_occur - 6;
                             var end = first_occur + 6;
@@ -78,6 +77,7 @@ var searchFunc = function(path, search_id, content_id) {
                         }
                     }
                 })
+                console.log(str)
                 $resultContent.innerHTML = str;
             })
         }
