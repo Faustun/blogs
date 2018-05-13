@@ -86,7 +86,7 @@ var path = "/blogs/search.xml";
 searchFunc(path, 'local-search-input', 'local-search-result');
 
 $(function() {
-    $('.search').click(function () {
+    $(document).on('click', '.search', function () {
         console.log(111111)
         $('body').addClass('modal-open');
         $('.modal').show().addClass('in');
