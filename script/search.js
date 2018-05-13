@@ -18,11 +18,11 @@ var searchFunc = function(path, search_id, content_id) {
             $(document).on('input', "#" + search_id, function(){
                 var str='<ul class=\"search-result-list\">';
                 var keywords = $(this).val().trim().toLowerCase().split(/[\s\-]+/);
-                console.log(keywords)
                 $resultContent.innerHTML = "";
                 if ($(this).val().trim().length <= 0) {
                     return;
                 }
+                console.log(keywords)
                 // 本地搜索主要部分
                 datas.forEach(function(data) {
                     var isMatch = true;
