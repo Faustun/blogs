@@ -18,6 +18,7 @@ var searchFunc = function(path, search_id, content_id) {
             $(document).on('input', "#" + search_id, function(){
                 var str='<ul class=\"search-result-list\">';
                 var keywords = $(this).val().trim().toLowerCase().split(/[\s\-]+/);
+                console.log(keywords)
                 $resultContent.innerHTML = "";
                 if ($(this).val().trim().length <= 0) {
                     return;
