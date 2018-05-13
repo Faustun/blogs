@@ -12,10 +12,8 @@ var searchFunc = function(path, search_id, content_id) {
                     url: $( "url" , this).text()
                 };
             }).get();
-            //ID选择器
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
             $(document).on('input', "#" + search_id, function(){
+                var $resultContent = document.getElementById(content_id);
                 var str='<ul class=\"search-result-list\">';
                 var keywords = $(this).val().trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
@@ -77,8 +75,7 @@ var searchFunc = function(path, search_id, content_id) {
                         }
                     }
                 })
-                $('#'+ content_id).html(str)
-                // $resultContent.innerHTML = str;
+                $resultContent.innerHTML = str;
             })
         }
     })
