@@ -15,7 +15,7 @@ var searchFunc = function(path, search_id, content_id) {
             //ID选择器
             var $input = document.getElementById(search_id);
             var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
+            $(document).on('input', $($input), function(){
                 var str='<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
