@@ -22,7 +22,7 @@ var searchFunc = function(path, search_id, content_id) {
                 if ($(this).val().trim().length <= 0) {
                     return;
                 }
-                console.log(keywords)
+                console.log(datas)
                 // 本地搜索主要部分
                 datas.forEach(function(data) {
                     var isMatch = true;
