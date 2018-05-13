@@ -17,9 +17,9 @@ var searchFunc = function(path, search_id, content_id) {
             var $resultContent = document.getElementById(content_id);
             $(document).on('input', $($input), function(){
                 var str='<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                var keywords = $(this).val().trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
-                if (this.value.trim().length <= 0) {
+                if ($(this).val().trim().length <= 0) {
                     return;
                 }
                 // 本地搜索主要部分
