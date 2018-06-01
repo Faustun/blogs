@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>理解vue生命周期</title>
+      <link href="/blogs/2018/06/01/vue-lifecycle/"/>
+      <url>/blogs/2018/06/01/vue-lifecycle/</url>
+      <content type="html"><![CDATA[<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等<br><a id="more"></a></p><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p><p>在new一个vue实例对象的过程当中，首先执行init，在init Events&amp;Lifecycle过程中会调用beforeCreat。<br>接着在init injections&amp;reactivity的时候调用create。在beforecreate的时候事件是ok的，reactivity还没ok，所以在beforeCreate的时候不要修改数据,在做数据请求的时候最早要放在create中。<br>接着会判断是否有’el’option,如果没有，会等着我们去调用$mount(el)。<br>接着判断是否有’template’option，如果有，会把template解析成render函数,这一步在beforeMount和mounted之间。<br>在我们使用vue组件开发的过程中是都没有template的,在组件中写的template都经过了vue-loader处理。<br>beforeMount是在有了render函数的时候才会执行，执行render函数之后就调用mounted,在mounted之后vue实例就创建完成了。<br>后续的工作都是通过外部的触发才会执行。<br>如果数据变化就会执行beforeUpdata到updata。<br>如果我们组建被销毁就会调用beforeDestory和destory。</p><blockquote><ul><li>beforecreated：el 和 data 并未初始化 </li><li>created:完成了 data 数据的初始化，el没有</li><li>beforeMount：完成了 el 和 data 初始化 </li><li>mounted ：完成Dom挂载</li><li>DOM相关操作放在mounted之后,数据相关操作，可以放在created，也可以放在mounted里面</li></ul></blockquote>]]></content>
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>进程与线程的一个简单解释</title>
       <link href="/blogs/2018/06/01/process-thread/"/>
       <url>/blogs/2018/06/01/process-thread/</url>
