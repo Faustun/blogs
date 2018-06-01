@@ -6,7 +6,7 @@
   <link href="/blogs/atom.xml" rel="self"/>
   
   <link href="https://songzhiguo.github.io/blogs/"/>
-  <updated>2018-05-25T04:23:23.426Z</updated>
+  <updated>2018-06-01T03:22:38.224Z</updated>
   <id>https://songzhiguo.github.io/blogs/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>进程与线程的一个简单解释</title>
+    <link href="https://songzhiguo.github.io/blogs/2018/06/01/process-thread/"/>
+    <id>https://songzhiguo.github.io/blogs/2018/06/01/process-thread/</id>
+    <published>2018-06-01T03:14:52.000Z</published>
+    <updated>2018-06-01T03:22:38.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>计算机的核心是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。<br><a id="more"></a></p><p><a href="http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html" target="_blank" rel="external">进程与线程的一个简单解释</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;计算机的核心是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://songzhiguo.github.io/blogs/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>vue中删除数组指定数据产生渲染错乱</title>
@@ -441,28 +461,6 @@
     <summary type="html">
     
       &lt;p&gt;字符串：由0个或多个字符组成的串，只能读取，不能设置。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则知识点</title>
-    <link href="https://songzhiguo.github.io/blogs/2017/12/08/RegExp/"/>
-    <id>https://songzhiguo.github.io/blogs/2017/12/08/RegExp/</id>
-    <published>2017-12-08T05:30:06.000Z</published>
-    <updated>2018-03-12T04:36:54.417Z</updated>
-    
-    <content type="html"><![CDATA[<p>正则的两种写法：<br><a id="more"></a></p><p>第一种（标准写法）：<br>new RegExp(规则，修饰符)；</p><p>第二种（简写）：<br>/规则/</p><blockquote><ul><li>\d：一个数字</li><li>\D：一个非数字</li><li>\w：一个数字、字母、下划线</li><li>\W：一个非数字、字母、下划线</li><li>\n：换行</li><li>\s：空格</li><li>\S：非空格</li><li>\b：边界符</li><li>.：任意字符除了\n</li><li>[]：在中括号里任意选择一个字符。</li><li>[^]：排除</li><li>{}：量词范围</li><li>{0,1}/?：最小可以没有最大1个</li><li>{0,}/*：最小没有，最大无限</li><li>{1,}/+：最小1个，最大无限</li><li>{n}：固定的次数</li><li>修饰符：i -&gt;  忽略大小写。</li><li>转义符：\</li></ul></blockquote><h4 id="正则的方法-text"><a href="#正则的方法-text" class="headerlink" title="正则的方法-text"></a>正则的方法-text</h4><p>test:检测是否正则匹配的内容,如果正则成立那么返回一个布尔值。</p><blockquote><ul><li>正则.test(string);</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'RegExp'</span>;</div><div class="line"><span class="keyword">var</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'p'</span>,<span class="string">'i'</span>);</div><div class="line"><span class="built_in">console</span>.log(re.test(str));</div></pre></td></tr></table></figure><h4 id="字符串方法-match"><a href="#字符串方法-match" class="headerlink" title="字符串方法-match"></a>字符串方法-match</h4><p>match：将匹配到的字符放到一个数组中。</p><p>string.match(正则);</p><p>当匹配到的字符只有一个的时候，会显示出多个属性</p><p>index: 匹配字符的位置   </p><p>input: 所有内容</p><p>而length为1</p><blockquote><ul><li>match如果找不到返回null</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'das37213dsa321hjkh321321'</span>;</div><div class="line"><span class="built_in">console</span>.log(str.match(<span class="regexp">/\d+/g</span>))</div></pre></td></tr></table></figure><h4 id="字符串的方法-search"><a href="#字符串的方法-search" class="headerlink" title="字符串的方法-search"></a>字符串的方法-search</h4><p>search：找到（可以指定也可以正则匹配）匹配的字符位置。</p><p>sting.search(字符串||正则);</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'aacabca523c'</span>;</div><div class="line"><span class="built_in">console</span>.log(str.search(<span class="regexp">/\d/</span>));</div></pre></td></tr></table></figure><blockquote><ul><li>search如果找不到返回-1</li></ul></blockquote><h4 id="字符串方法-replace"><a href="#字符串方法-replace" class="headerlink" title="字符串方法-replace"></a>字符串方法-replace</h4><p>replace：replace</p><p>string.replace(要替换谁||可以用正则,替换成什么||函数);</p><p>返回值为替换好的字符串。</p><p>注意：<br>如果使用函数，那么一定要有retrun,不然为undefind</p><p>一般情况下</p><p>函数内的第一个参数是当前匹配的字符。</p><p>函数内的第二个参数是当前匹配的索引值。</p><p>函数内的第三个参数是当前总的字符串。</p><p>函数内的第四个以后参数都为undefined。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'中国共产党,习近平总书记说：“法轮功是邪教!”'</span>;</div><div class="line">str.replace(<span class="regexp">/中国共产党|习近平|法轮功|邪教/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span>,$<span class="number">1</span>,$<span class="number">2</span>,$<span class="number">3</span>,$<span class="number">4</span></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log($<span class="number">0</span>,$<span class="number">1</span>,$<span class="number">2</span>,$<span class="number">3</span>,$<span class="number">4</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><h4 id="子项"><a href="#子项" class="headerlink" title="子项 - ()"></a>子项 - ()</h4><p>从左往右数</p><p>如果正则中有子项</p><p>从函数的第一个参数之后就是匹配到的子项值，<br>当参数的个数等于子项个数+1的时候，之后都为正常模式下的参数了(比如：索引，整个字符，undefined..)</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'2017/2/17'</span>;</div><div class="line"><span class="keyword">var</span> str = str.replace(<span class="regexp">/(\d+)\D+(\d+)\D+(\d+)/</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span>,$<span class="number">1</span>,$<span class="number">2</span>,$<span class="number">3</span></span>)</span>&#123;</div><div class="line">    <span class="comment">//console.log($1,$2,$3);</span></div><div class="line">    <span class="keyword">return</span> $<span class="number">1</span> + <span class="string">'年'</span> + $<span class="number">2</span> + <span class="string">'月'</span> + $<span class="number">3</span> + <span class="string">'日'</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure><h4 id="子项重定向"><a href="#子项重定向" class="headerlink" title="子项重定向"></a>子项重定向</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'ssssssssaaaaaabbbbbb'</span>;</div><div class="line">str.replace(<span class="regexp">/(\w)\1+/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">0</span>,$<span class="number">1</span></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log($<span class="number">1</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;正则的两种写法：&lt;br&gt;
     
     </summary>
     
