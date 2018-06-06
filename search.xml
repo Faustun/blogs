@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>let和const命令</title>
+      <link href="/blogs/2018/06/06/let-const/"/>
+      <url>/blogs/2018/06/06/let-const/</url>
+      <content type="html"><![CDATA[<p>ES6新增let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p><a id="more"></a><p>ES6新增let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。<br>不存在变量提升</p><p>暂时性死区<br>只要在块级作用域内存在let命令，他所声明的变量就绑定这个区域，不在受外部影响。</p><p>ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就是用这些变量，就会报错。<br>在代码块内，使用let声明变量之前，改变量都是不可用的，这在语法上称为暂时性死区</p><p>不允许重复声明</p><p>为什么需要块级作用域<br>第一种场景，内层变量可能会覆盖外层变量<br>第二种场景，用来计数的循环变量泄露为全局变量</p><p>const声明一个只读的常量，一旦声明常量的值就不能改变。</p>]]></content>
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>理解vue生命周期</title>
       <link href="/blogs/2018/06/01/vue-lifecycle/"/>
       <url>/blogs/2018/06/01/vue-lifecycle/</url>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzhiguo.github.io/blogs/2018/06/06/let-const/</loc>
+    
+    <lastmod>2018-06-06T02:04:43.198Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://songzhiguo.github.io/blogs/2018/06/01/vue-lifecycle/</loc>
     
     <lastmod>2018-06-05T08:10:29.035Z</lastmod>

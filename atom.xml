@@ -6,7 +6,7 @@
   <link href="/blogs/atom.xml" rel="self"/>
   
   <link href="https://songzhiguo.github.io/blogs/"/>
-  <updated>2018-06-05T08:10:29.035Z</updated>
+  <updated>2018-06-06T02:04:43.198Z</updated>
   <id>https://songzhiguo.github.io/blogs/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>let和const命令</title>
+    <link href="https://songzhiguo.github.io/blogs/2018/06/06/let-const/"/>
+    <id>https://songzhiguo.github.io/blogs/2018/06/06/let-const/</id>
+    <published>2018-06-06T01:48:19.000Z</published>
+    <updated>2018-06-06T02:04:43.198Z</updated>
+    
+    <content type="html"><![CDATA[<p>ES6新增let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p><a id="more"></a><p>ES6新增let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。<br>不存在变量提升</p><p>暂时性死区<br>只要在块级作用域内存在let命令，他所声明的变量就绑定这个区域，不在受外部影响。</p><p>ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就是用这些变量，就会报错。<br>在代码块内，使用let声明变量之前，改变量都是不可用的，这在语法上称为暂时性死区</p><p>不允许重复声明</p><p>为什么需要块级作用域<br>第一种场景，内层变量可能会覆盖外层变量<br>第二种场景，用来计数的循环变量泄露为全局变量</p><p>const声明一个只读的常量，一旦声明常量的值就不能改变。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ES6新增let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/categories/javascript/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>理解vue生命周期</title>
@@ -437,28 +457,6 @@
     <summary type="html">
     
       &lt;p&gt;由0个或者多个数据组成的集合&lt;br&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://songzhiguo.github.io/blogs/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>日期对象</title>
-    <link href="https://songzhiguo.github.io/blogs/2017/12/13/date/"/>
-    <id>https://songzhiguo.github.io/blogs/2017/12/13/date/</id>
-    <published>2017-12-13T10:10:27.000Z</published>
-    <updated>2018-03-12T04:34:46.651Z</updated>
-    
-    <content type="html"><![CDATA[<p>时间对象，时间戳<br><a id="more"></a></p><p>时间对象，时间戳， new Date()</p><p>获取到的是本地时间，时间对象下有一些方法，可以让我们获取或者设置时间</p><p>1970年1月1日00:00:00格林尼治时间</p><p>注意：月从0开始，0是一月，11是十二月</p><blockquote><ul><li>设置时间对象3种格式</li><li>1.数字，用逗号分隔（年,月,日,时,分,秒）</li><li>2.字符串,月份英文或缩写,首字母大小写都行，用逗号或者空格分隔(月 日 年 时:分:秒)</li><li>3.对象,时间对象</li></ul></blockquote><h3 id="获取时间"><a href="#获取时间" class="headerlink" title="获取时间"></a>获取时间</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> *  获取时间,数字类型</div><div class="line"> *      getFullYear() <span class="comment">-- 年</span></div><div class="line"> *      getMonth()    <span class="comment">-- 月（从0开始，0就是一月）</span></div><div class="line"> *      getDate()     <span class="comment">-- 日</span></div><div class="line"> *      getDay()      <span class="comment">-- 星期几（星期一就是1,星期日是0）</span></div><div class="line"> *      getHours()    <span class="comment">-- 小时 </span></div><div class="line"> *      getMinutes()  <span class="comment">-- 分</span></div><div class="line"> *      getSeconds()  <span class="comment">-- 秒</span></div><div class="line"> *      getMilliseconds()<span class="comment">--毫秒</span></div><div class="line"> *      getTime()     <span class="comment">--时间，当前时间距离1970年1月1日00:00:00的毫秒时间差</span></div><div class="line"> * */</div></pre></td></tr></table></figure><h3 id="设置时间"><a href="#设置时间" class="headerlink" title="设置时间"></a>设置时间</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> *  设置时间</div><div class="line"> *      setFullYear() <span class="comment">-- 年</span></div><div class="line"> *      setMonth()    <span class="comment">-- 月（从0开始，0就是一月）</span></div><div class="line"> *      setDate()     <span class="comment">-- 日</span></div><div class="line"> *      setHours()    <span class="comment">-- 小时 </span></div><div class="line"> *      setMinutes()  <span class="comment">-- 分</span></div><div class="line"> *      setSeconds()  <span class="comment">-- 秒</span></div><div class="line"> *      setMilliseconds()<span class="comment">--毫秒</span></div><div class="line"> *      setTime()     <span class="comment">--时间，当前时间距离1970年1月1日00:00:00的毫秒时间差</span></div><div class="line"> * */</div></pre></td></tr></table></figure><h3 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">2016</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">10</span>];</div><div class="line"><span class="comment">//2016年10月1日10时1分10秒</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arr,n</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> s = <span class="string">''</span>;</div><div class="line">    <span class="keyword">var</span> n = n || <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> aStr = [<span class="string">'年月日时分秒'</span>,<span class="string">'-- ::'</span>,<span class="string">'// ::'</span>];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        s += arr[i]+aStr[n].charAt(i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> s;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(fn(arr))</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;时间对象，时间戳&lt;br&gt;
     
     </summary>
     
