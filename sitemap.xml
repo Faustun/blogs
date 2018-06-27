@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzhiguo.github.io/blogs/about/index.html</loc>
+    
+    <lastmod>2018-06-27T04:27:20.888Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://songzhiguo.github.io/blogs/2018/06/27/module/</loc>
     
     <lastmod>2018-06-27T03:20:31.256Z</lastmod>
@@ -222,13 +229,6 @@
     <loc>https://songzhiguo.github.io/blogs/2018/01/08/deconstruction/</loc>
     
     <lastmod>2018-03-12T04:32:29.585Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://songzhiguo.github.io/blogs/about/index.html</loc>
-    
-    <lastmod>2018-02-02T06:04:04.504Z</lastmod>
     
   </url>
   
