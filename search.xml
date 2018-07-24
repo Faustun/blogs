@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title>linux下升级node遇到的问题</title>
+      <link href="/blogs/2018/07/24/node-upgrade/"/>
+      <url>/blogs/2018/07/24/node-upgrade/</url>
+      <content type="html"><![CDATA[<p>在服务器部署Nuxt项目时，遇到Node版本过低。linux下升级node遇到的问题<br><a id="more"></a></p><h4 id="切换node版本时，键盘不能操作的问题的解决方案"><a href="#切换node版本时，键盘不能操作的问题的解决方案" class="headerlink" title="切换node版本时，键盘不能操作的问题的解决方案"></a>切换node版本时，键盘不能操作的问题的解决方案</h4><p>n之后，如果键盘上下箭头操作不能控制。那么请考虑一下，可能n程序出了bug。<br>比如，当前版本是7.7.1，但是n列出所有已经安装版本的时候，没有显示出7.7.1。<br>这个就是问题所在了，主动使用n安装了当前node版本7.7.1<br>然后就解决了这个问题。</p><h4 id="切换node版本后，node版本号不变的问题"><a href="#切换node版本后，node版本号不变的问题" class="headerlink" title="切换node版本后，node版本号不变的问题"></a>切换node版本后，node版本号不变的问题</h4><p>切换后，node的版本居然没有发生变化，这个就有些小尴尬了。解决方案如下：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="builtin-name">export</span> <span class="attribute">NODE_HOME</span>=/usr/local</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$NODE_HOME</span>/bin:$PATH</div><div class="line"><span class="builtin-name">export</span> <span class="attribute">NODE_PATH</span>=<span class="variable">$NODE_HOME</span>/lib/node_modules:$PATH</div></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> pit </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>webpack</title>
+      <link href="/blogs/2018/07/16/webpack/"/>
+      <url>/blogs/2018/07/16/webpack/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Module 的语法</title>
       <link href="/blogs/2018/06/27/module/"/>
       <url>/blogs/2018/06/27/module/</url>

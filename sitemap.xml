@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://songzhiguo.github.io/blogs/2018/07/24/node-upgrade/</loc>
+    
+    <lastmod>2018-07-24T04:06:37.002Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://songzhiguo.github.io/blogs/2018/07/16/webpack/</loc>
+    
+    <lastmod>2018-07-16T07:04:55.054Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://songzhiguo.github.io/blogs/about/index.html</loc>
     
-    <lastmod>2018-06-27T04:27:20.888Z</lastmod>
+    <lastmod>2018-06-27T04:27:20.889Z</lastmod>
     
   </url>
   
@@ -18,7 +32,7 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/06/25/js-basics/</loc>
     
-    <lastmod>2018-06-25T10:32:53.652Z</lastmod>
+    <lastmod>2018-06-25T10:32:53.653Z</lastmod>
     
   </url>
   
@@ -39,14 +53,14 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/06/01/process-thread/</loc>
     
-    <lastmod>2018-06-01T03:22:38.224Z</lastmod>
+    <lastmod>2018-06-01T03:22:38.225Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/05/11/uploadqiniu/</loc>
     
-    <lastmod>2018-05-25T05:00:25.397Z</lastmod>
+    <lastmod>2018-05-25T05:00:25.398Z</lastmod>
     
   </url>
   
@@ -74,7 +88,7 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/03/15/setup-obj/</loc>
     
-    <lastmod>2018-05-25T04:28:40.171Z</lastmod>
+    <lastmod>2018-05-25T04:28:40.172Z</lastmod>
     
   </url>
   
@@ -88,14 +102,14 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/05/25/vue-forRender/</loc>
     
-    <lastmod>2018-05-25T04:23:23.426Z</lastmod>
+    <lastmod>2018-05-25T04:23:23.427Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://songzhiguo.github.io/blogs/2017/12/29/Array/</loc>
     
-    <lastmod>2018-05-15T03:31:08.064Z</lastmod>
+    <lastmod>2018-05-15T03:31:08.065Z</lastmod>
     
   </url>
   
@@ -116,7 +130,7 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2017/11/23/autoplay/</loc>
     
-    <lastmod>2018-03-12T04:40:51.727Z</lastmod>
+    <lastmod>2018-03-12T04:40:51.728Z</lastmod>
     
   </url>
   
@@ -158,7 +172,7 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2017/11/11/oriented/</loc>
     
-    <lastmod>2018-03-12T04:36:15.094Z</lastmod>
+    <lastmod>2018-03-12T04:36:15.095Z</lastmod>
     
   </url>
   
@@ -172,7 +186,7 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/01/18/es6-symbol/</loc>
     
-    <lastmod>2018-03-12T04:35:38.149Z</lastmod>
+    <lastmod>2018-03-12T04:35:38.150Z</lastmod>
     
   </url>
   
@@ -193,28 +207,28 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/01/15/es6-object/</loc>
     
-    <lastmod>2018-03-12T04:35:21.825Z</lastmod>
+    <lastmod>2018-03-12T04:35:21.826Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/01/09/es6_string/</loc>
     
-    <lastmod>2018-03-12T04:35:17.295Z</lastmod>
+    <lastmod>2018-03-12T04:35:17.296Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/01/11/es6_function/</loc>
     
-    <lastmod>2018-03-12T04:35:06.871Z</lastmod>
+    <lastmod>2018-03-12T04:35:06.872Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://songzhiguo.github.io/blogs/2017/12/13/date/</loc>
     
-    <lastmod>2018-03-12T04:34:46.651Z</lastmod>
+    <lastmod>2018-03-12T04:34:46.652Z</lastmod>
     
   </url>
   
@@ -228,7 +242,7 @@
   <url>
     <loc>https://songzhiguo.github.io/blogs/2018/01/08/deconstruction/</loc>
     
-    <lastmod>2018-03-12T04:32:29.585Z</lastmod>
+    <lastmod>2018-03-12T04:32:29.586Z</lastmod>
     
   </url>
   
